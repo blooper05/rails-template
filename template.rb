@@ -102,3 +102,7 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'capistrano-rails-console' # Capistrano plugin which adds a remote rails console
   end
 CODE
+
+# README.md
+create_file 'README.md', "# #{app_name}"
+remove_file 'README.rdoc'
