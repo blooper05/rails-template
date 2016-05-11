@@ -103,6 +103,11 @@ create_file 'Gemfile', <<~CODE, force: true
   end
 CODE
 
+# bundle install
+Bundler.with_clean_env do
+  run 'bundle install --path vendor/bundle --binstubs .bundle/bin --jobs=4'
+end
+
 # README.md
 create_file 'README.md', "# #{app_name}"
 remove_file 'README.rdoc'
