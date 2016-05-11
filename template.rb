@@ -115,3 +115,7 @@ remove_file 'README.rdoc'
 # config/environments
 copy_file 'config/environments/production.rb', 'config/environments/edge.rb'
 copy_file 'config/environments/production.rb', 'config/environments/staging.rb'
+
+# config/locales
+create_file 'config/locales/en.yml', force: true
+create_file 'config/locales/ja.yml'
