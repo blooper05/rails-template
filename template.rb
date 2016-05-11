@@ -119,3 +119,15 @@ copy_file 'config/environments/production.rb', 'config/environments/staging.rb'
 # config/locales
 create_file 'config/locales/en.yml', force: true
 create_file 'config/locales/ja.yml'
+
+# config/application.rb
+application do
+  <<-CODE.lstrip
+    # TimeZone
+    config.time_zone                      = 'Tokyo'
+    config.active_record.default_timezone = :local
+
+    # Locale
+    config.i18n.default_locale = :ja
+  CODE
+end
