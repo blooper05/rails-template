@@ -111,3 +111,7 @@ end
 # README.md
 create_file 'README.md', "# #{app_name}"
 remove_file 'README.rdoc'
+
+# config/environments
+copy_file 'config/environments/production.rb', 'config/environments/edge.rb'
+copy_file 'config/environments/production.rb', 'config/environments/staging.rb'
