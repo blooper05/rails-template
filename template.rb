@@ -131,3 +131,12 @@ application do
     config.i18n.default_locale = :ja
   CODE
 end
+
+# unicorn
+UNICORN_CONF_URL = 'http://unicorn.bogomips.org/examples/unicorn.conf.rb'.freeze
+
+inside 'config/unicorn' do
+  run "curl -s #{UNICORN_CONF_URL} -o production.rb"
+  run 'ln -s production.rb edge.rb'
+  run 'ln -s production.rb staging.rb'
+end
