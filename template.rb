@@ -113,8 +113,10 @@ create_file 'README.md', "# #{app_name}"
 remove_file 'README.rdoc'
 
 # config/environments
-copy_file 'config/environments/production.rb', 'config/environments/edge.rb'
-copy_file 'config/environments/production.rb', 'config/environments/staging.rb'
+inside 'config/environments' do
+  run 'ln -s production.rb edge.rb'
+  run 'ln -s production.rb staging.rb'
+end
 
 # config/locales
 create_file 'config/locales/en.yml', force: true
