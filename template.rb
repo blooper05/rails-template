@@ -142,3 +142,8 @@ inside 'config/unicorn' do
   run 'ln -s production.rb edge.rb'
   run 'ln -s production.rb staging.rb'
 end
+
+# active_model_serializers
+create_file 'app/serializers/.keep'
+create_file 'app/serializers/concerns/.keep'
+create_file 'spec/serializers/.keep'
