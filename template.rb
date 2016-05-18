@@ -15,6 +15,7 @@ IGNORES = %w(
 run "curl -s #{GITIGNORE_IO_URL + IGNORES.join('%2C')} > .gitignore"
 
 # Gemfile
+remove_file 'Gemfile.lock'
 create_file 'Gemfile', <<~CODE, force: true
   source 'https://rubygems.org'
 
