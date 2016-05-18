@@ -192,3 +192,6 @@ initializer 'oj.rb', <<~CODE
   # attempts to be compatible with other systems
   Oj.default_options = { mode: :compat }
 CODE
+
+# kaminari
+generate 'kaminari:config'
