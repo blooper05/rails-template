@@ -34,7 +34,7 @@ create_file 'Gemfile', <<~CODE, force: true
 
   # Model
   gem 'squeel'            # Active Record queries with fewer strings, and more Ruby
-  gem 'transitions'       # State machine extracted from ActiveModel
+  gem 'aasm'              # State machines for Ruby classes
   gem 'enumerize'         # Enumerated attributes with I18n and ActiveRecord/Mongoid support
   gem 'default_value_for' # Provides a way to specify default values for ActiveRecord models
 
