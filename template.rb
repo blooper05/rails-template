@@ -198,3 +198,6 @@ generate 'kaminari:config'
 
 # config
 generate 'config:install'
+
+# dotenv-rails
+create_file '.env'
