@@ -199,6 +199,8 @@ generate 'kaminari:config'
 
 # config
 generate 'config:install'
+create_file 'config/settings/edge.yml'
+create_file 'config/settings/staging.yml'
 
 # dotenv-rails
 create_file '.env'
