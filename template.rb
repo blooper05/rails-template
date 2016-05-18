@@ -147,3 +147,41 @@ end
 create_file 'app/serializers/.keep'
 create_file 'app/serializers/concerns/.keep'
 create_file 'spec/serializers/.keep'
+
+# versionist
+initializer 'versionist.rb', <<~'CODE'
+  module SerializedVersionist
+    def add_presenters_base
+      in_root do
+        create_file "app/serializers/#{module_name_for_path(module_name)}/.keep"
+      end
+    end
+
+    def add_presenter_test
+      in_root do
+        create_file "spec/serializers/#{module_name_for_path(module_name)}/.keep"
+      end
+    end
+
+    def add_helpers_dir
+      in_root do
+        create_file "app/helpers/#{module_name_for_path(module_name)}/.keep"
+      end
+    end
+
+    def add_helpers_test_dir
+      in_root do
+        create_file "spec/helpers/#{module_name_for_path(module_name)}/.keep"
+      end
+    end
+
+    def add_documentation_base
+    end
+  end
+
+  class Versionist::NewApiVersionGenerator
+    prepend SerializedVersionist
+  end
+CODE
+
+# generate 'versionist:new_api_version v1 V1 --path=value:v1'
