@@ -185,3 +185,9 @@ initializer 'versionist.rb', <<~'CODE'
 CODE
 
 # generate 'versionist:new_api_version v1 V1 --path=value:v1'
+
+# oj
+initializer 'oj.rb', <<~CODE
+  # attempts to be compatible with other systems
+  Oj.default_options = { mode: :compat }
+CODE
