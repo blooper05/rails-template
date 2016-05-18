@@ -195,3 +195,6 @@ CODE
 
 # kaminari
 generate 'kaminari:config'
+
+# config
+generate 'config:install'
