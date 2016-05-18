@@ -136,6 +136,22 @@ application do
   CODE
 end
 
+# config/database.yml
+append_file 'config/database.yml', <<~CODE
+
+  edge:
+    <<: *default
+    database: #{app_name}_edge
+    username: #{app_name}
+    password: <%= ENV['RAILS_TEMPLATE_DATABASE_PASSWORD'] %>
+
+  staging:
+    <<: *default
+    database: #{app_name}_staging
+    username: #{app_name}
+    password: <%= ENV['RAILS_TEMPLATE_DATABASE_PASSWORD'] %>
+CODE
+
 # unicorn
 UNICORN_CONF_URL = 'http://unicorn.bogomips.org/examples/unicorn.conf.rb'.freeze
 
