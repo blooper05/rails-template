@@ -44,6 +44,7 @@ create_file 'Gemfile', <<~CODE, force: true
   gem 'rails-i18n'   # Central point to collect locale data for use in Ruby on Rails
 
   # Monitoring
+  gem 'chrono_logger'          # A lock-free logger with timebased file rotation
   gem 'exception_notification' # Exception Notifier Plugin for Rails
   gem 'slack-notifier'         # A simple wrapper for posting to slack channels
 
@@ -201,3 +202,8 @@ generate 'config:install'
 
 # dotenv-rails
 create_file '.env'
+
+# chrono_logger
+gsub_file 'config/environments/production.rb', /# config\.logger = .+/ do
+  'config.logger = ::ChronoLogger.new("#{config.paths[:log][0]}.%Y%m%d")'
+end
