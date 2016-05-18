@@ -152,6 +152,16 @@ append_file 'config/database.yml', <<~CODE
     password: <%= ENV['RAILS_TEMPLATE_DATABASE_PASSWORD'] %>
 CODE
 
+# config/secrets.yml
+append_file 'config/secrets.yml', <<~CODE
+
+  edge:
+    secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+
+  staging:
+    secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+CODE
+
 # unicorn
 UNICORN_CONF_URL = 'http://unicorn.bogomips.org/examples/unicorn.conf.rb'.freeze
 
