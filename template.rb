@@ -185,7 +185,7 @@ initializer 'versionist.rb', <<~'CODE'
   end
 CODE
 
-# generate 'versionist:new_api_version v1 V1 --path=value:v1'
+generate 'versionist:new_api_version v1 V1 --path=value:v1'
 
 # oj
 initializer 'oj.rb', <<~CODE
