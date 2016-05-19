@@ -271,3 +271,6 @@ CODE
       icon:        ''
   CODE
 end
+
+# rspec-rails
+generate 'rspec:install'
