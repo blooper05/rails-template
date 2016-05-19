@@ -237,7 +237,7 @@ gsub_file 'config/environments/production.rb', /# config\.logger = .+/ do
 end
 
 # exception_notification
-initializer 'exception_notification.rb', <<~'CODE'
+initializer 'exception_notification.rb', <<~CODE
   require 'exception_notification/rails'
 
   ExceptionNotification.configure do |config|
@@ -257,3 +257,17 @@ initializer 'exception_notification.rb', <<~'CODE'
     )
   end
 CODE
+
+%w(development edge production staging test).each do |env|
+  append_file "config/settings/#{env}.yml", <<~CODE
+    proxy:
+      address: ''
+      port:    ''
+
+    slack:
+      webhook_url: ''
+      channel:     ''
+      username:    ''
+      icon:        ''
+  CODE
+end
