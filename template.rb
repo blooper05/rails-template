@@ -107,7 +107,7 @@ CODE
 
 # bundle install
 Bundler.with_clean_env do
-  run 'bundle install --path vendor/bundle --binstubs .bundle/bin --jobs=4'
+  run 'bundle'
 end
 
 # README.md
