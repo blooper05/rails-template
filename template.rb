@@ -274,3 +274,10 @@ end
 
 # rspec-rails
 generate 'rspec:install'
+
+comment_lines 'spec/rails_helper.rb', 'config\.fixture_path'
+uncomment_lines 'spec/rails_helper.rb', 'spec/support/\*\*/\*\.rb'
+
+create_file 'spec/mailers/.keep'
+create_file 'spec/models/.keep'
+create_file 'spec/support/utilities.rb'
