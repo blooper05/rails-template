@@ -63,7 +63,7 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'spring-commands-rspec'   # Implements the rspec command for Spring
     gem 'spring-commands-rubocop' # Implements rubocop command for Spring
 
-    ### Test ###
+    ### Testing ###
     gem 'rspec-rails'        # A testing framework for Rails 3.x and 4.x
     gem 'factory_girl_rails' # A fixtures replacement
   end
@@ -91,13 +91,12 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'jdoc'               # Generate API documentation from JSON Schema
     gem 'quiet_assets'       # Mutes assets pipeline log messages
     gem 'terminal-notifier'  # Send User Notifications on Mac OS X 10.8 from the command-line
-  end
 
-  group :deployment do
+    ### Deployment ###
     gem 'capistrano'               # Remote multi-server automation tool
-    gem 'capistrano-rails'         # Official Ruby on Rails specific tasks for Capistrano
     gem 'capistrano-rbenv'         # Idiomatic rbenv support for Capistrano
     gem 'capistrano-bundler'       # Bundler specific tasks for Capistrano
+    gem 'capistrano-rails'         # Official Ruby on Rails specific tasks for Capistrano
     gem 'capistrano3-unicorn'      # Integrates Unicorn tasks into capistrano deployment scripts
     gem 'slackistrano'             # Slack integration for Capistrano deployments
     gem 'capistrano-rails-console' # Capistrano plugin which adds a remote rails console
