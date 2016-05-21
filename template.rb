@@ -372,3 +372,13 @@ CODE
 
 ### fuubar ###
 append_file '.rspec', '--format Fuubar'
+
+### simplecov ###
+insert_into_file 'spec/rails_helper.rb', "\n\nrequire 'simplecov'",
+                 after: /^# Add additional requires below this line.+$/
+
+create_file '.simplecov', <<~CODE
+  SimpleCov.start 'rails'
+
+  # vim: set ft=ruby:
+CODE
