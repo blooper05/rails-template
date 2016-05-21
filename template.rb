@@ -281,3 +281,11 @@ uncomment_lines 'spec/rails_helper.rb', 'spec/support/\*\*/\*\.rb'
 create_file 'spec/mailers/.keep'
 create_file 'spec/models/.keep'
 create_file 'spec/support/utilities.rb'
+
+### factory_girl_rails ###
+insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end$/
+
+  ### Factory Girl ###
+  config.before(:suite) { FactoryGirl.reload }
+  config.include FactoryGirl::Syntax::Methods
+CODE
