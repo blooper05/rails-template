@@ -405,3 +405,6 @@ annotate_file = 'lib/tasks/auto_annotate_models.rake'
 gsub_file annotate_file, /'routes'\s+=>\s+'false'/ do |match|
   match.sub('false', 'true')
 end
+
+### capistrano ###
+run 'cap install STAGES=edge,staging,production'
