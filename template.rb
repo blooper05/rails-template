@@ -413,3 +413,6 @@ uncomment_lines 'Capfile', "require 'capistrano/rbenv'"
 
 ### capistrano-bundler ###
 uncomment_lines 'Capfile', "require 'capistrano/bundler'"
+
+### capistrano-rails ###
+uncomment_lines 'Capfile', "require 'capistrano/rails/migrations'"
