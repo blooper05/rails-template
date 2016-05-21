@@ -304,3 +304,6 @@ insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end$/
   config.before(:suite) { DatabaseRewinder.clean_all }
   config.after(:each) { DatabaseRewinder.clean }
 CODE
+
+### fuubar ###
+append_file '.rspec', '--format Fuubar'
