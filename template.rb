@@ -306,6 +306,20 @@ append_file '.pryrc', <<~CODE
   end
 CODE
 
+### awesome_print ###
+append_file '.pryrc', <<~'CODE'
+
+  ### Awesome Print ###
+  begin
+    require 'awesome_print'
+    Pry.config.print = proc do |output, value|
+      Pry::Helpers::BaseHelpers.stagger_output("=> #{value.ai}", output)
+    end
+  rescue LoadError
+    puts 'no awesome_print :('
+  end
+CODE
+
 ### rspec-rails ###
 generate 'rspec:install'
 
