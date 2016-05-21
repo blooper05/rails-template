@@ -407,3 +407,6 @@ end
 
 ### capistrano ###
 run 'cap install STAGES=edge,staging,production'
+
+### capistrano-rbenv ###
+uncomment_lines 'Capfile', "require 'capistrano/rbenv'"
