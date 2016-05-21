@@ -410,3 +410,6 @@ run 'cap install STAGES=edge,staging,production'
 
 ### capistrano-rbenv ###
 uncomment_lines 'Capfile', "require 'capistrano/rbenv'"
+
+### capistrano-bundler ###
+uncomment_lines 'Capfile', "require 'capistrano/bundler'"
