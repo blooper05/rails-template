@@ -296,3 +296,11 @@ insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end$/
   ### timecop ###
   config.after(:each) { Timecop.return }
 CODE
+
+### database_rewinder ###
+insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end$/
+
+  ### DatabaseRewinder ###
+  config.before(:suite) { DatabaseRewinder.clean_all }
+  config.after(:each) { DatabaseRewinder.clean }
+CODE
