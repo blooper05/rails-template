@@ -1,4 +1,4 @@
-# .gitignore
+### .gitignore ###
 GITIGNORE_IO_URL = 'https://www.gitignore.io/api/'.freeze
 
 IGNORES = %w(
@@ -14,7 +14,7 @@ IGNORES = %w(
 
 run "curl -s #{GITIGNORE_IO_URL + IGNORES.join('%2C')} > .gitignore"
 
-# Gemfile
+### Gemfile ###
 remove_file 'Gemfile.lock'
 create_file 'Gemfile', <<~CODE, force: true
   source 'https://rubygems.org'
@@ -24,7 +24,7 @@ create_file 'Gemfile', <<~CODE, force: true
   gem 'pg'        # The Ruby interface to the PostgreSQL RDBMS
   gem 'unicorn'   # Rack HTTP server for fast clients and Unix
 
-  # API
+  ### API ###
   gem 'active_model_serializers' # ActiveModel::Serializer implementation and Rails hooks
   gem 'versionist'               # A plugin for versioning Rails based RESTful APIs
   gem 'oj'                       # A fast JSON parser and Object marshaller as a Ruby gem
@@ -32,24 +32,24 @@ create_file 'Gemfile', <<~CODE, force: true
   gem 'rack-json_schema'         # JSON Schema based Rack middlewares
   gem 'kaminari'                 # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator
 
-  # Model
+  ### Model ###
   gem 'squeel'            # Active Record queries with fewer strings, and more Ruby
   gem 'aasm'              # State machines for Ruby classes
   gem 'enumerize'         # Enumerated attributes with I18n and ActiveRecord/Mongoid support
   gem 'default_value_for' # Provides a way to specify default values for ActiveRecord models
 
-  # Setting
+  ### Setting ###
   gem 'config'       # Easiest way to add multi-environment yaml settings
   gem 'dotenv-rails' # Loads environment variables from '.env'
   gem 'rails-i18n'   # Central point to collect locale data for use in Ruby on Rails
 
-  # Monitoring
+  ### Monitoring ###
   gem 'chrono_logger'          # A lock-free logger with timebased file rotation
   gem 'exception_notification' # Exception Notifier Plugin for Rails
   gem 'slack-notifier'         # A simple wrapper for posting to slack channels
 
   group :development, :test do
-    # Console
+    ### Console ###
     gem 'pry-rails'     # An IRB alternative and runtime developer console
     gem 'pry-coolline'  # Live syntax-highlighting for the Pry REPL
     gem 'hirb'          # A mini view framework for console/irb
@@ -58,12 +58,12 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'pry-byebug'    # Pry navigation commands via byebug
     gem 'pry-doc'       # Provide MRI Core documentation and source code for the Pry REPL
 
-    # Command
+    ### Command ###
     gem 'spring'                  # Rails application preloader
     gem 'spring-commands-rspec'   # Implements the rspec command for Spring
     gem 'spring-commands-rubocop' # Implements rubocop command for Spring
 
-    # Test
+    ### Test ###
     gem 'rspec-rails'        # A testing framework for Rails 3.x and 4.x
     gem 'factory_girl_rails' # A fixtures replacement
   end
@@ -76,7 +76,7 @@ create_file 'Gemfile', <<~CODE, force: true
   end
 
   group :development do
-    # Analysis
+    ### Analysis ###
     gem 'brakeman'             # A static analysis security vulnerability scanner
     gem 'bullet'               # Help to kill N+1 queries and unused eager loading
     gem 'rack-mini-profiler'   # Profiler for your development and production Ruby rack apps
@@ -84,7 +84,7 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'rails_best_practices' # A code metric tool for rails projects
     gem 'reek'                 # Code smell detector for Ruby
 
-    # Utility
+    ### Utility ###
     gem 'annotate'           # Annotate Rails classes with schema and routes info
     gem 'migration_comments' # Comments for your migrations
     gem 'rails-erd'          # Generate Entity-Relationship Diagrams for Rails applications
@@ -105,38 +105,38 @@ create_file 'Gemfile', <<~CODE, force: true
   end
 CODE
 
-# bundle install
+### bundle install ###
 Bundler.with_clean_env do
   run 'bundle'
 end
 
-# README.md
+### README.md ###
 create_file 'README.md', "# #{app_name}"
 remove_file 'README.rdoc'
 
-# config/environments
+### config/environments ###
 inside 'config/environments' do
   run 'ln -s production.rb edge.rb'
   run 'ln -s production.rb staging.rb'
 end
 
-# config/locales
+### config/locales ###
 create_file 'config/locales/en.yml', force: true
 create_file 'config/locales/ja.yml'
 
-# config/application.rb
+### config/application.rb ###
 application do
   <<-CODE.lstrip
-    # TimeZone
+    ### TimeZone ###
     config.time_zone                      = 'Tokyo'
     config.active_record.default_timezone = :local
 
-    # Locale
+    ### Locale ###
     config.i18n.default_locale = :ja
   CODE
 end
 
-# config/database.yml
+### config/database.yml ###
 append_file 'config/database.yml', <<~CODE
 
   edge:
@@ -152,7 +152,7 @@ append_file 'config/database.yml', <<~CODE
     password: <%= ENV['RAILS_TEMPLATE_DATABASE_PASSWORD'] %>
 CODE
 
-# config/secrets.yml
+### config/secrets.yml ###
 append_file 'config/secrets.yml', <<~CODE
 
   edge:
@@ -162,7 +162,7 @@ append_file 'config/secrets.yml', <<~CODE
     secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
 CODE
 
-# unicorn
+### unicorn ###
 UNICORN_CONF_URL = 'http://unicorn.bogomips.org/examples/unicorn.conf.rb'.freeze
 
 inside 'config/unicorn' do
@@ -171,12 +171,12 @@ inside 'config/unicorn' do
   run 'ln -s production.rb staging.rb'
 end
 
-# active_model_serializers
+### active_model_serializers ###
 create_file 'app/serializers/.keep'
 create_file 'app/serializers/concerns/.keep'
 create_file 'spec/serializers/.keep'
 
-# versionist
+### versionist ###
 initializer 'versionist.rb', <<~'CODE'
   module SerializedVersionist
     def add_presenters_base
@@ -214,29 +214,29 @@ CODE
 
 generate 'versionist:new_api_version v1 V1 --path=value:v1'
 
-# oj
+### oj ###
 initializer 'oj.rb', <<~CODE
   # attempts to be compatible with other systems
   Oj.default_options = { mode: :compat }
 CODE
 
-# kaminari
+### kaminari ###
 generate 'kaminari:config'
 
-# config
+### config ###
 generate 'config:install'
 create_file 'config/settings/edge.yml'
 create_file 'config/settings/staging.yml'
 
-# dotenv-rails
+### dotenv-rails ###
 create_file '.env'
 
-# chrono_logger
+### chrono_logger ###
 gsub_file 'config/environments/production.rb', /# config\.logger = .+/ do
   'config.logger = ::ChronoLogger.new("#{config.paths[:log][0]}.%Y%m%d")'
 end
 
-# exception_notification
+### exception_notification ###
 initializer 'exception_notification.rb', <<~CODE
   require 'exception_notification/rails'
 
@@ -272,7 +272,7 @@ CODE
   CODE
 end
 
-# rspec-rails
+### rspec-rails ###
 generate 'rspec:install'
 
 comment_lines 'spec/rails_helper.rb', 'config\.fixture_path'
