@@ -289,3 +289,10 @@ insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end$/
   config.before(:suite) { FactoryGirl.reload }
   config.include FactoryGirl::Syntax::Methods
 CODE
+
+### timecop ###
+insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end$/
+
+  ### timecop ###
+  config.after(:each) { Timecop.return }
+CODE
