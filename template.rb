@@ -272,6 +272,9 @@ CODE
   CODE
 end
 
+### pry-rails ###
+create_file '.pryrc', "# vim: set ft=ruby:\n"
+
 ### rspec-rails ###
 generate 'rspec:install'
 
