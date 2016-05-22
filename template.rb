@@ -416,3 +416,10 @@ uncomment_lines 'Capfile', "require 'capistrano/bundler'"
 
 ### capistrano-rails ###
 uncomment_lines 'Capfile', "require 'capistrano/rails/migrations'"
+
+### git init ###
+after_bundle do
+  git :init
+  git add: '.'
+  git commit: "-a -m 'Initial commit'"
+end
