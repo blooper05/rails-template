@@ -417,6 +417,9 @@ uncomment_lines 'Capfile', "require 'capistrano/bundler'"
 ### capistrano-rails ###
 uncomment_lines 'Capfile', "require 'capistrano/rails/migrations'"
 
+### spring ###
+run 'spring binstub --all'
+
 ### git init ###
 after_bundle do
   git :init
