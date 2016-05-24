@@ -421,6 +421,10 @@ uncomment_lines 'Capfile', "require 'capistrano/rails/migrations'"
 insert_into_file 'Capfile', "require 'capistrano3/unicorn'\n",
                  after: "# require 'capistrano/passenger'\n"
 
+### slackistrano ###
+insert_into_file 'Capfile', "require 'slackistrano/capistrano'\n",
+                 after: "require 'capistrano3/unicorn'\n"
+
 ### spring ###
 run 'spring binstub --all'
 
