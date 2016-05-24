@@ -425,6 +425,10 @@ insert_into_file 'Capfile', "require 'capistrano3/unicorn'\n",
 insert_into_file 'Capfile', "require 'slackistrano/capistrano'\n",
                  after: "require 'capistrano3/unicorn'\n"
 
+### capistrano-rails-console ###
+insert_into_file 'Capfile', "require 'capistrano/rails/console'\n",
+                 after: "require 'slackistrano/capistrano'\n"
+
 ### spring ###
 run 'spring binstub --all'
 
