@@ -417,6 +417,10 @@ uncomment_lines 'Capfile', "require 'capistrano/bundler'"
 ### capistrano-rails ###
 uncomment_lines 'Capfile', "require 'capistrano/rails/migrations'"
 
+### capistrano3/unicorn ###
+insert_into_file 'Capfile', "require 'capistrano3/unicorn'\n",
+                 after: "# require 'capistrano/passenger'\n"
+
 ### spring ###
 run 'spring binstub --all'
 
