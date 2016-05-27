@@ -434,6 +434,9 @@ run 'spring binstub --all'
 
 ### git init ###
 after_bundle do
+  remove_file '.git'
+  remove_file 'template.rb'
+
   git :init
   git add: '.'
   git commit: "-a -m 'Initial commit'"
