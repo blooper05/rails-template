@@ -43,6 +43,10 @@ create_file 'Gemfile', <<~CODE, force: true
   gem 'dotenv-rails' # Loads environment variables from '.env'
   gem 'rails-i18n'   # Central point to collect locale data for use in Ruby on Rails
 
+  ### CLI ###
+  gem 'thor'       # A toolkit for building powerful command-line interfaces
+  gem 'formatador' # STDOUT text formatting
+
   ### Monitoring ###
   gem 'chrono_logger'          # A lock-free logger with timebased file rotation
   gem 'exception_notification' # Exception Notifier Plugin for Rails
