@@ -38,6 +38,7 @@ create_file 'Gemfile', <<~CODE, force: true
   gem 'enumerize'         # Enumerated attributes with I18n and ActiveRecord/Mongoid support
   gem 'default_value_for' # Provides a way to specify default values for ActiveRecord models
   gem 'active_type'       # Make any Ruby object quack like ActiveRecord
+  gem 'seed-fu'           # Advanced seed data handling for Rails
 
   ### Setting ###
   gem 'config'       # Easiest way to add multi-environment yaml settings
@@ -231,6 +232,9 @@ CODE
 
 ### kaminari ###
 generate 'kaminari:config'
+
+### seed-fu ###
+create_file 'db/fixtures/.keep'
 
 ### config ###
 generate 'config:install'
@@ -433,6 +437,10 @@ uncomment_lines 'Capfile', "require 'capistrano/rails/migrations'"
 
 ### capistrano3/unicorn ###
 insert_into_file 'Capfile', "require 'capistrano3/unicorn'\n",
+                 before: "\n# Load custom tasks from `lib/capistrano/tasks`"
+
+### seed-fu ###
+insert_into_file 'Capfile', "require 'seed-fu/capistrano3'\n",
                  before: "\n# Load custom tasks from `lib/capistrano/tasks`"
 
 ### whenever ###
