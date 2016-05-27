@@ -134,7 +134,17 @@ application do
   CODE
 end
 
-### config/database.yml ###
+### config/secrets.yml ###
+append_file 'config/secrets.yml', <<~CODE
+
+  edge:
+    secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+
+  staging:
+    secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+CODE
+
+### pg ###
 append_file 'config/database.yml', <<~CODE
     host:     <%= ENV['#{@app_name.upcase}_DATABASE_HOST'] %>
 
@@ -151,16 +161,6 @@ append_file 'config/database.yml', <<~CODE
     username: #{app_name}
     password: <%= ENV['#{@app_name.upcase}_DATABASE_PASSWORD'] %>
     host:     <%= ENV['#{@app_name.upcase}_DATABASE_HOST'] %>
-CODE
-
-### config/secrets.yml ###
-append_file 'config/secrets.yml', <<~CODE
-
-  edge:
-    secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
-
-  staging:
-    secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
 CODE
 
 ### unicorn ###
