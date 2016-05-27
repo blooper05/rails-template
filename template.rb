@@ -87,6 +87,8 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'rubocop'              # A Ruby static code analyzer
     gem 'rails_best_practices' # A code metric tool for rails projects
     gem 'reek'                 # Code smell detector for Ruby
+    gem 'flay'                 # Analyzes code for structural similarities
+    gem 'fasterer'             # Make your Rubies go faster with this command line tool
 
     ### Utility ###
     gem 'annotate'           # Annotate Rails classes with schema and routes info
