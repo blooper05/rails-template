@@ -432,6 +432,10 @@ uncomment_lines 'Capfile', "require 'capistrano/rails/migrations'"
 insert_into_file 'Capfile', "require 'capistrano3/unicorn'\n",
                  before: "\n# Load custom tasks from `lib/capistrano/tasks`"
 
+### whenever ###
+insert_into_file 'Capfile', "require 'whenever/capistrano'\n",
+                 before: "\n# Load custom tasks from `lib/capistrano/tasks`"
+
 ### capistrano-rails-console ###
 insert_into_file 'Capfile', "require 'capistrano/rails/console'\n",
                  before: "\n# Load custom tasks from `lib/capistrano/tasks`"
