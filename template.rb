@@ -46,6 +46,7 @@ create_file 'Gemfile', <<~CODE, force: true
   ### CLI ###
   gem 'thor'       # A toolkit for building powerful command-line interfaces
   gem 'formatador' # STDOUT text formatting
+  gem 'whenever'   # Provides a clear syntax for writing and deploying cron jobs
 
   ### Monitoring ###
   gem 'chrono_logger'          # A lock-free logger with timebased file rotation
@@ -235,6 +236,9 @@ create_file 'config/settings/staging.yml'
 
 ### dotenv-rails ###
 create_file '.env'
+
+### whenever ###
+run 'wheneverize .'
 
 ### chrono_logger ###
 gsub_file 'config/environments/production.rb', /# config\.logger = .+/ do
