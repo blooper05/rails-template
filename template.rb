@@ -103,8 +103,8 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'capistrano-bundler'       # Bundler specific tasks for Capistrano
     gem 'capistrano-rails'         # Official Ruby on Rails specific tasks for Capistrano
     gem 'capistrano3-unicorn'      # Integrates Unicorn tasks into capistrano deployment scripts
-    gem 'slackistrano'             # Slack integration for Capistrano deployments
     gem 'capistrano-rails-console' # Capistrano plugin which adds a remote rails console
+    gem 'slackistrano'             # Slack integration for Capistrano deployments
   end
 CODE
 
@@ -430,15 +430,15 @@ uncomment_lines 'Capfile', "require 'capistrano/rails/migrations'"
 
 ### capistrano3/unicorn ###
 insert_into_file 'Capfile', "require 'capistrano3/unicorn'\n",
-                 after: "# require 'capistrano/passenger'\n"
-
-### slackistrano ###
-insert_into_file 'Capfile', "require 'slackistrano/capistrano'\n",
-                 after: "require 'capistrano3/unicorn'\n"
+                 before: "\n# Load custom tasks from `lib/capistrano/tasks`"
 
 ### capistrano-rails-console ###
 insert_into_file 'Capfile', "require 'capistrano/rails/console'\n",
-                 after: "require 'slackistrano/capistrano'\n"
+                 before: "\n# Load custom tasks from `lib/capistrano/tasks`"
+
+### slackistrano ###
+insert_into_file 'Capfile', "require 'slackistrano/capistrano'\n",
+                 before: "\n# Load custom tasks from `lib/capistrano/tasks`"
 
 ### spring ###
 run 'spring binstub --all'
