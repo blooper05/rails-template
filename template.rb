@@ -136,18 +136,21 @@ end
 
 ### config/database.yml ###
 append_file 'config/database.yml', <<~CODE
+    host:     <%= ENV['#{@app_name.upcase}_DATABASE_HOST'] %>
 
   edge:
     <<: *default
     database: #{app_name}_edge
     username: #{app_name}
-    password: <%= ENV['RAILS_TEMPLATE_DATABASE_PASSWORD'] %>
+    password: <%= ENV['#{@app_name.upcase}_DATABASE_PASSWORD'] %>
+    host:     <%= ENV['#{@app_name.upcase}_DATABASE_HOST'] %>
 
   staging:
     <<: *default
     database: #{app_name}_staging
     username: #{app_name}
-    password: <%= ENV['RAILS_TEMPLATE_DATABASE_PASSWORD'] %>
+    password: <%= ENV['#{@app_name.upcase}_DATABASE_PASSWORD'] %>
+    host:     <%= ENV['#{@app_name.upcase}_DATABASE_HOST'] %>
 CODE
 
 ### config/secrets.yml ###
