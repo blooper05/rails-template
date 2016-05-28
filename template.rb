@@ -19,10 +19,11 @@ remove_file 'Gemfile.lock'
 create_file 'Gemfile', <<~CODE, force: true
   source 'https://rubygems.org'
 
-  gem 'rails'     # A full-stack web framework optimized for programmer happiness and sustainable productivity
-  gem 'rails-api' # Rails for API only applications
-  gem 'pg'        # The Ruby interface to the PostgreSQL RDBMS
-  gem 'unicorn'   # Rack HTTP server for fast clients and Unix
+  gem 'rails'                 # A full-stack web framework optimized for programmer happiness and sustainable productivity
+  gem 'rails-api'             # Rails for API only applications
+  gem 'pg'                    # The Ruby interface to the PostgreSQL RDBMS
+  gem 'unicorn'               # Rack HTTP server for fast clients and Unix
+  gem 'unicorn-worker-killer' # Automatically restart Unicorn workers
 
   ### API ###
   gem 'active_model_serializers' # ActiveModel::Serializer implementation and Rails hooks
@@ -180,6 +181,23 @@ inside 'config/unicorn' do
   run 'ln -s production.rb edge.rb'
   run 'ln -s production.rb staging.rb'
 end
+
+### unicorn-worker-killer ###
+prepend_file 'config.ru', <<~CODE
+  # Unicorn self-process killer
+  require 'unicorn/worker_killer'
+
+  # Max requests per worker
+  max_request_min = (ENV['UNICORN_MAX_REQUEST_MIN'] || 3072).to_i
+  max_request_max = (ENV['UNICORN_MAX_REQUEST_MAX'] || 4096).to_i
+  use Unicorn::WorkerKiller::MaxRequests, max_request_min, max_request_max
+
+  # Max memory size (RSS) per worker
+  oom_min = (ENV['UNICORN_OOM_MIN'] || 192).to_i * (1024**2)
+  oom_max = (ENV['UNICORN_OOM_MAX'] || 256).to_i * (1024**2)
+  use Unicorn::WorkerKiller::Oom, oom_min, oom_max
+
+CODE
 
 ### active_model_serializers ###
 create_file 'app/serializers/.keep'
