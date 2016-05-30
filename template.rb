@@ -476,6 +476,37 @@ insert_into_file 'Capfile', "require 'slackistrano/capistrano'\n",
 ### spring ###
 run 'spring binstub --all'
 
+### rubocop ###
+COPS = %w(
+  Style/DefWithParentheses
+  Style/EmptyLineBetweenDefs
+  Style/EmptyLines
+  Style/EmptyLinesAroundAccessModifier
+  Style/EmptyLinesAroundBlockBody
+  Style/EmptyLinesAroundClassBody
+  Style/EmptyLinesAroundMethodBody
+  Style/EmptyLinesAroundModuleBody
+  Style/HashSyntax
+  Style/IndentationConsistency
+  Style/IndentationWidth
+  Style/MethodCallParentheses
+  Style/MethodDefParentheses
+  Style/MultilineOperationIndentation
+  Style/SpaceAfterColon
+  Style/SpaceAfterComma
+  Style/SpaceAfterNot
+  Style/SpaceAfterSemicolon
+  Style/SpaceAroundEqualsInParameterDefault
+  Style/SpaceAroundOperators
+  Style/SpaceBeforeSemicolon
+  Style/SpaceInsideHashLiteralBraces
+  Style/StringLiterals
+  Style/TrailingBlankLines
+  Style/TrailingWhitespace
+).freeze
+
+run "rubocop -a --only #{COPS.join(',')}"
+
 ### git init ###
 after_bundle do
   remove_file '.git'
