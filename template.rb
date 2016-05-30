@@ -478,6 +478,8 @@ run 'spring binstub --all'
 
 ### rubocop ###
 COPS = %w(
+  Lint/UnusedBlockArgument
+  Style/AndOr
   Style/DefWithParentheses
   Style/EmptyLineBetweenDefs
   Style/EmptyLines
@@ -486,6 +488,7 @@ COPS = %w(
   Style/EmptyLinesAroundClassBody
   Style/EmptyLinesAroundMethodBody
   Style/EmptyLinesAroundModuleBody
+  Style/ExtraSpacing
   Style/HashSyntax
   Style/IndentationConsistency
   Style/IndentationWidth
