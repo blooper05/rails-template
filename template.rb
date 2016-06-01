@@ -72,8 +72,9 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'spring-commands-rubocop' # Implements rubocop command for Spring
 
     ### Testing ###
-    gem 'rspec-rails'        # A testing framework for Rails 3.x and 4.x
-    gem 'factory_girl_rails' # A fixtures replacement
+    gem 'rspec-rails'             # A testing framework for Rails 3.x and 4.x
+    gem 'rspec-request_describer' # Force some rules to write self-documenting request spec
+    gem 'factory_girl_rails'      # A fixtures replacement
   end
 
   group :test do
@@ -380,6 +381,13 @@ uncomment_lines 'spec/rails_helper.rb', 'spec/support/\*\*/\*\.rb'
 create_file 'spec/mailers/.keep'
 create_file 'spec/models/.keep'
 create_file 'spec/support/utilities.rb'
+
+### rspec-request_describer ###
+insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end$/
+
+  ### RSpec::RequestDescriber ###
+  config.include RSpec::RequestDescriber, type: :request
+CODE
 
 ### factory_girl_rails ###
 insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end$/
