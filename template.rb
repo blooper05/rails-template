@@ -154,6 +154,7 @@ end
 gsub_file 'config/routes.rb', /^\s*#.*\n/, ''
 
 ### config/secrets.yml ###
+comment_lines '.gitignore', 'config/secrets.yml'
 append_file 'config/secrets.yml', <<~CODE
 
   edge:
