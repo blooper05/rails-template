@@ -268,6 +268,7 @@ create_file 'db/fixtures/.keep'
 generate 'config:install'
 create_file 'config/settings/edge.yml'
 create_file 'config/settings/staging.yml'
+remove_file 'config/settings.local.yml'
 
 ### dotenv-rails ###
 create_file '.env'
