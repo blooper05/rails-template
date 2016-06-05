@@ -70,18 +70,17 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'spring'                  # Rails application preloader
     gem 'spring-commands-rspec'   # Implements the rspec command for Spring
     gem 'spring-commands-rubocop' # Implements rubocop command for Spring
+  end
 
+  group :test do
     ### Testing ###
     gem 'rspec-rails'             # A testing framework for Rails 3.x and 4.x
     gem 'rspec-request_describer' # Force some rules to write self-documenting request spec
     gem 'factory_girl_rails'      # A fixtures replacement
-  end
-
-  group :test do
-    gem 'timecop'           # Making it dead simple to test time-dependent code
-    gem 'database_rewinder' # Minimalist's tiny and ultra-fast database cleaner
-    gem 'fuubar'            # The instafailing RSpec progress bar formatter
-    gem 'simplecov'         # A code coverage analysis tool for Ruby
+    gem 'timecop'                 # Making it dead simple to test time-dependent code
+    gem 'database_rewinder'       # Minimalist's tiny and ultra-fast database cleaner
+    gem 'fuubar'                  # The instafailing RSpec progress bar formatter
+    gem 'simplecov'               # A code coverage analysis tool for Ruby
   end
 
   group :development do
