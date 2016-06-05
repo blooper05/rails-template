@@ -141,6 +141,11 @@ create_file 'config/locales/ja.yml'
 ### config/application.rb ###
 application do
   <<-CODE.lstrip
+    ### Generators ###
+    config.generators do |g|
+      g.test_framework :rspec
+    end
+
     ### TimeZone ###
     config.time_zone                      = 'Tokyo'
     config.active_record.default_timezone = :local
