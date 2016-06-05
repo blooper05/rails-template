@@ -465,6 +465,7 @@ end
 
 ### capistrano ###
 run 'cap install STAGES=edge,staging,production'
+create_file 'lib/capistrano/tasks/.keep'
 
 ### capistrano-rbenv ###
 uncomment_lines 'Capfile', "require 'capistrano/rbenv'"
