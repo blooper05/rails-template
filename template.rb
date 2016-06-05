@@ -146,6 +146,9 @@ application do
   CODE
 end
 
+### config/routes.rb ###
+gsub_file 'config/routes.rb', /^\s*#.*\n/, ''
+
 ### config/secrets.yml ###
 append_file 'config/secrets.yml', <<~CODE
 
