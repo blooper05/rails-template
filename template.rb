@@ -53,6 +53,7 @@ create_file 'Gemfile', <<~CODE, force: true
 
   ### Monitoring ###
   gem 'komachi_heartbeat'      # Rails Application Heartbeat Check Engine
+  gem 'newrelic_rpm'           # New Relic RPM Ruby Agent
   gem 'chrono_logger'          # A lock-free logger with timebased file rotation
   gem 'exception_notification' # Exception Notifier Plugin for Rails
   gem 'slack-notifier'         # A simple wrapper for posting to slack channels
