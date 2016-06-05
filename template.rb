@@ -52,6 +52,7 @@ create_file 'Gemfile', <<~CODE, force: true
   gem 'whenever'   # Provides a clear syntax for writing and deploying cron jobs
 
   ### Monitoring ###
+  gem 'komachi_heartbeat'      # Rails Application Heartbeat Check Engine
   gem 'chrono_logger'          # A lock-free logger with timebased file rotation
   gem 'exception_notification' # Exception Notifier Plugin for Rails
   gem 'slack-notifier'         # A simple wrapper for posting to slack channels
@@ -265,6 +266,9 @@ create_file '.env'
 
 ### whenever ###
 run 'wheneverize .'
+
+### komachi_heartbeat ###
+route "mount KomachiHeartbeat::Engine => '/healthcheck'\n"
 
 ### chrono_logger ###
 gsub_file 'config/environments/production.rb', /# config\.logger = .+/ do
