@@ -21,3 +21,10 @@ annotate_file = 'lib/tasks/auto_annotate_models.rake'
 gsub_file annotate_file, /'routes'\s+=>\s+'false'/ do |match|
   match.sub('false', 'true')
 end
+
+### letter_opener ###
+insert_into_file 'config/environments/development.rb', <<-CODE, before: /^end$/
+
+  ### Letter Opener ###
+  config.action_mailer.delivery_method = :letter_opener
+CODE

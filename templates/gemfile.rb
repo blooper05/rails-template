@@ -87,6 +87,7 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'prmd'               # JSON Schema tools and doc generation for HTTP APIs
     gem 'jdoc'               # Generate API documentation from JSON Schema
     gem 'quiet_assets'       # Mutes assets pipeline log messages
+    gem 'letter_opener'      # Preview mail in the browser instead of sending
     gem 'terminal-notifier'  # Send User Notifications on Mac OS X 10.8 from the command-line
 
     ### Deployment ###
