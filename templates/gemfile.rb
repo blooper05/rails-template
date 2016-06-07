@@ -13,7 +13,7 @@ create_file 'Gemfile', <<~CODE, force: true
   gem 'active_model_serializers' # ActiveModel::Serializer implementation and Rails hooks
   gem 'versionist'               # A plugin for versioning Rails based RESTful APIs
   gem 'oj'                       # A fast JSON parser and Object marshaller as a Ruby gem
-  gem 'json-jwt'                 # JSON Web Token and its family
+  gem 'jwt'                      # A pure ruby implementation of the RFC 7519 OAuth JSON Web Token (JWT) standard
   gem 'rack-json_schema'         # JSON Schema based Rack middlewares
   gem 'kaminari'                 # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator
 
