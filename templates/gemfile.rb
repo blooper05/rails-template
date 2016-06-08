@@ -18,6 +18,7 @@ create_file 'Gemfile', <<~CODE, force: true
   gem 'kaminari'                 # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator
 
   ### Model ###
+  gem 'bcrypt'            # A Ruby binding for the OpenBSD bcrypt() password hashing algorithm
   gem 'squeel'            # Active Record queries with fewer strings, and more Ruby
   gem 'aasm'              # State machines for Ruby classes
   gem 'enumerize'         # Enumerated attributes with I18n and ActiveRecord/Mongoid support
