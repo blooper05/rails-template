@@ -3,6 +3,7 @@ remove_file 'Gemfile.lock'
 create_file 'Gemfile', <<~CODE, force: true
   source 'https://rubygems.org'
 
+  ### Application ###
   gem 'rails'                 # A full-stack web framework optimized for programmer happiness and sustainable productivity
   gem 'rails-api'             # Rails for API only applications
   gem 'pg'                    # The Ruby interface to the PostgreSQL RDBMS
