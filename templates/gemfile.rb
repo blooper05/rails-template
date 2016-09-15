@@ -5,7 +5,6 @@ create_file 'Gemfile', <<~CODE, force: true
 
   ### Application ###
   gem 'rails'                 # A full-stack web framework optimized for programmer happiness and sustainable productivity
-  gem 'rails-api'             # Rails for API only applications
   gem 'pg'                    # The Ruby interface to the PostgreSQL RDBMS
   gem 'unicorn'               # Rack HTTP server for fast clients and Unix
   gem 'unicorn-worker-killer' # Automatically restart Unicorn workers
