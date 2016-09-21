@@ -51,7 +51,6 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'hirb-unicode'  # Unicode support for hirb
     gem 'awesome_print' # Pretty print your Ruby objects with style
     gem 'pry-byebug'    # Pry navigation commands via byebug
-    gem 'pry-doc'       # Provide MRI Core documentation and source code for the Pry REPL
 
     ### Command ###
     gem 'spring'                  # Rails application preloader
