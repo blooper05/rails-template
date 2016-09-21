@@ -19,7 +19,6 @@ create_file 'Gemfile', <<~CODE, force: true
 
   ### Model ###
   gem 'bcrypt'            # A Ruby binding for the OpenBSD bcrypt() password hashing algorithm
-  gem 'squeel'            # Active Record queries with fewer strings, and more Ruby
   gem 'aasm'              # State machines for Ruby classes
   gem 'enumerize'         # Enumerated attributes with I18n and ActiveRecord/Mongoid support
   gem 'default_value_for' # Provides a way to specify default values for ActiveRecord models
