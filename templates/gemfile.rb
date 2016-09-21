@@ -80,7 +80,6 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'fasterer'             # Make your Rubies go faster with this command line tool
 
     ### Utility ###
-    gem 'thin'               # A very fast & simple Ruby web server
     gem 'annotate'           # Annotate Rails classes with schema and routes info
     gem 'migration_comments' # Comments for your migrations
     gem 'rails-erd'          # Generate Entity-Relationship Diagrams for Rails applications
