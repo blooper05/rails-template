@@ -1,7 +1,3 @@
-### README.md ###
-create_file 'README.md', "# #{app_name}"
-remove_file 'README.rdoc'
-
 ### config/environments ###
 inside 'config/environments' do
   run 'ln -s production.rb edge.rb'
