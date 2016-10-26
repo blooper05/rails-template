@@ -4,9 +4,6 @@ inside 'config/environments' do
   run 'ln -s production.rb staging.rb'
 end
 
-### config/initializers/secret_token.rb ###
-remove_file 'config/initializers/secret_token.rb'
-
 ### config/locales ###
 create_file 'config/locales/en.yml', force: true
 create_file 'config/locales/ja.yml'
