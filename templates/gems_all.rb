@@ -92,6 +92,7 @@ generate 'kaminari:config'
 
 ### seed-fu ###
 create_file 'db/fixtures/.keep'
+remove_file 'db/seeds.rb'
 
 ### config ###
 generate 'config:install'
