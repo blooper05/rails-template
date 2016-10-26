@@ -43,11 +43,6 @@ prepend_file 'config.ru', <<~CODE
 
 CODE
 
-### active_model_serializers ###
-create_file 'app/serializers/.keep'
-create_file 'app/serializers/concerns/.keep'
-create_file 'spec/serializers/.keep'
-
 ### versionist ###
 initializer 'versionist.rb', <<~'CODE'
   module SerializedVersionist
