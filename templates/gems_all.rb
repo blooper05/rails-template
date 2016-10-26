@@ -18,7 +18,7 @@ append_file 'config/database.yml', <<~CODE
 CODE
 
 ### unicorn ###
-UNICORN_CONF_URL = 'http://unicorn.bogomips.org/examples/unicorn.conf.rb'.freeze
+UNICORN_CONF_URL = 'http://bogomips.org/unicorn/examples/unicorn.conf.rb'.freeze
 
 inside 'config/unicorn' do
   run "curl -s #{UNICORN_CONF_URL} -o production.rb"
