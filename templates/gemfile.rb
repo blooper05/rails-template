@@ -84,7 +84,6 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'rails-erd'          # Generate Entity-Relationship Diagrams for Rails applications
     gem 'prmd'               # JSON Schema tools and doc generation for HTTP APIs
     gem 'jdoc'               # Generate API documentation from JSON Schema
-    gem 'letter_opener'      # Preview mail in the browser instead of sending
     gem 'terminal-notifier'  # Send User Notifications on Mac OS X 10.8 from the command-line
 
     ### Deployment ###
