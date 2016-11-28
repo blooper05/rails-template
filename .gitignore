@@ -149,6 +149,7 @@ tags
 .idea/tasks.xml
 
 # Sensitive or high-churn files:
+.idea/dataSources/
 .idea/dataSources.ids
 .idea/dataSources.xml
 .idea/dataSources.local.xml
@@ -188,7 +189,7 @@ fabric.properties
 
 # *.iml
 # modules.xml
-# .idea/misc.xml 
+# .idea/misc.xml
 # *.ipr
 
 
