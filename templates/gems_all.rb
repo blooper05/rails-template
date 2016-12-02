@@ -43,6 +43,17 @@ prepend_file 'config.ru', <<~CODE
 
 CODE
 
+### rack-cors ###
+initializer 'cors.rb', <<~CODE
+  Rails.application.config.middleware.insert_before 0, Rack::Cors do
+    allow do
+      origins Settings.domain
+      resource '*', headers: :any,
+                    methods: %i(get post put patch delete options head)
+    end
+  end
+CODE
+
 ### versionist ###
 initializer 'versionist.rb', <<~'CODE'
   module SerializedVersionist
@@ -138,6 +149,8 @@ CODE
 
 %w(development edge production staging test).each do |env|
   append_file "config/settings/#{env}.yml", <<~CODE
+    domain: '*'
+
     proxy:
       address: ''
       port:    ''

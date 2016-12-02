@@ -10,6 +10,7 @@ create_file 'Gemfile', <<~CODE, force: true
   gem 'unicorn-worker-killer' # Automatically restart Unicorn workers
 
   ### API ###
+  gem 'rack-cors'                # Middleware for enabling Cross-Origin Resource Sharing in Rack apps
   gem 'active_model_serializers' # ActiveModel::Serializer implementation and Rails hooks
   gem 'versionist'               # A plugin for versioning Rails based RESTful APIs
   gem 'oj'                       # A fast JSON parser and Object marshaller as a Ruby gem
