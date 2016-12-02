@@ -122,7 +122,7 @@ route "mount KomachiHeartbeat::Engine => '/healthcheck'\n"
 
 ### chrono_logger ###
 gsub_file 'config/environments/production.rb', /# config\.logger = .+/ do
-  'config.logger = ::ChronoLogger.new("#{config.paths[:log][0]}.%Y%m%d")'
+  'config.logger = ::ChronoLogger.new("#{config.paths[\'log\'].first}.%Y%m%d")'
 end
 
 ### exception_notification ###
