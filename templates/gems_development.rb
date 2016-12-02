@@ -21,3 +21,16 @@ annotate_file = 'lib/tasks/auto_annotate_models.rake'
 gsub_file annotate_file, /'routes'\s+=>\s+'false'/ do |match|
   match.sub('false', 'true')
 end
+
+### rails-erd ###
+create_file '.erdconfig', <<~CODE
+  attributes:
+    - foreign_keys
+    - primary_keys
+    - timestamps
+    - inheritance
+    - content
+  filetype: png
+  orientation: vertical
+  sort: false
+CODE
