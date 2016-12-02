@@ -80,12 +80,11 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'fasterer'             # Make your Rubies go faster with this command line tool
 
     ### Utility ###
-    gem 'annotate'           # Annotate Rails classes with schema and routes info
-    gem 'migration_comments' # Comments for your migrations
-    gem 'rails-erd'          # Generate Entity-Relationship Diagrams for Rails applications
-    gem 'prmd'               # JSON Schema tools and doc generation for HTTP APIs
-    gem 'jdoc'               # Generate API documentation from JSON Schema
-    gem 'terminal-notifier'  # Send User Notifications on Mac OS X 10.8 from the command-line
+    gem 'annotate'          # Annotate Rails classes with schema and routes info
+    gem 'rails-erd'         # Generate Entity-Relationship Diagrams for Rails applications
+    gem 'prmd'              # JSON Schema tools and doc generation for HTTP APIs
+    gem 'jdoc'              # Generate API documentation from JSON Schema
+    gem 'terminal-notifier' # Send User Notifications on Mac OS X 10.8 from the command-line
 
     ### Deployment ###
     gem 'capistrano'               # Remote multi-server automation tool
