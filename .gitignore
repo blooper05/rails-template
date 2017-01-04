@@ -129,8 +129,10 @@ GitHub.sublime-settings
 
 ### Vim ###
 # swap
-[._]*.s[a-w][a-z]
-[._]s[a-w][a-z]
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-v][a-z]
+[._]sw[a-p]
 # session
 Session.vim
 # temporary
@@ -234,9 +236,10 @@ Temporary Items
 
 
 ### Windows ###
-# Windows image file caches
+# Windows thumbnail cache files
 Thumbs.db
 ehthumbs.db
+ehthumbs_vista.db
 
 # Folder config file
 Desktop.ini
@@ -252,3 +255,5 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# End of https://www.gitignore.io/api/ruby,rails,sublimetext,vim,jetbrains,linux,osx,windows
