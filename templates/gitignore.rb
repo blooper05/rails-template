@@ -1,5 +1,6 @@
+# frozen_string_literal: true
 ### .gitignore ###
-GITIGNORE_IO_URL = 'https://www.gitignore.io/api/'.freeze
+GITIGNORE_IO_URL = 'https://www.gitignore.io/api/'
 
 IGNORES = %w(
   ruby

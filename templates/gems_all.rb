@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 ### pg ###
 append_file 'config/database.yml', <<~CODE
     host:     <%= ENV['#{@app_name.upcase}_DATABASE_HOST'] %>
@@ -18,7 +19,7 @@ append_file 'config/database.yml', <<~CODE
 CODE
 
 ### unicorn ###
-UNICORN_CONF_URL = 'http://bogomips.org/unicorn/examples/unicorn.conf.rb'.freeze
+UNICORN_CONF_URL = 'http://bogomips.org/unicorn/examples/unicorn.conf.rb'
 
 inside 'config/unicorn' do
   run "curl -s #{UNICORN_CONF_URL} -o production.rb"

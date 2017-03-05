@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 ### pry-rails ###
 create_file '.pryrc', "# vim: set ft=ruby:\n"
 

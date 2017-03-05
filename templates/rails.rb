@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 ### config/environments ###
 inside 'config/environments' do
   run 'ln -s production.rb edge.rb'

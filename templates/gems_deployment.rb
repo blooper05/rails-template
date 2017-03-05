@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 ### capistrano ###
 run 'cap install STAGES=edge,staging,production'
 create_file 'lib/capistrano/tasks/.keep'
