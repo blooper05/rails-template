@@ -13,4 +13,4 @@ IGNORES = %w(
   windows
 ).freeze
 
-run "curl -s #{GITIGNORE_IO_URL + IGNORES.join('%2C')} > .gitignore"
+run "curl -sL #{GITIGNORE_IO_URL + IGNORES.join(',')} > .gitignore"
