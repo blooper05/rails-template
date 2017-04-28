@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 ### bullet ###
 insert_into_file 'config/environments/test.rb', <<-CODE, before: /^end$/
 

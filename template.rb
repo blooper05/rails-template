@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 TEMPLATES_PATH = "#{File.dirname(__FILE__)}/templates"
 
 apply "#{TEMPLATES_PATH}/gitignore.rb"

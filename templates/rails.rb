@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 ### config/environments ###
 inside 'config/environments' do
   run 'ln -s production.rb edge.rb'
@@ -31,10 +32,8 @@ gsub_file 'config/routes.rb', /^\s*#.*\n/, ''
 
 ### config/secrets.yml ###
 append_file 'config/secrets.yml', <<~CODE
-
   edge:
-    secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
-
+   secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
   staging:
-    secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
+   secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
 CODE

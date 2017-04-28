@@ -1,9 +1,10 @@
 # frozen_string_literal: true
+
 ### spring ###
 run 'spring binstub --all'
 
 ### rubocop ###
-COPS = %w(
+COPS = %w[
   Lint/UnusedBlockArgument
   Style/AndOr
   Style/DefWithParentheses
@@ -32,7 +33,7 @@ COPS = %w(
   Style/StringLiterals
   Style/TrailingBlankLines
   Style/TrailingWhitespace
-).freeze
+].freeze
 
 run "rubocop -a --only #{COPS.join(',')}"
 

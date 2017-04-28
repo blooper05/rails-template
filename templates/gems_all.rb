@@ -1,21 +1,20 @@
 # frozen_string_literal: true
+
 ### pg ###
 append_file 'config/database.yml', <<~CODE
-    host:     <%= ENV['#{@app_name.upcase}_DATABASE_HOST'] %>
-
+   host:     <%= ENV['#{@app_name.upcase}_DATABASE_HOST'] %>
   edge:
-    <<: *default
-    database: #{app_name}_edge
-    username: #{app_name}
-    password: <%= ENV['#{@app_name.upcase}_DATABASE_PASSWORD'] %>
-    host:     <%= ENV['#{@app_name.upcase}_DATABASE_HOST'] %>
-
+   <<: *default
+   database: #{app_name}_edge
+   username: #{app_name}
+   password: <%= ENV['#{@app_name.upcase}_DATABASE_PASSWORD'] %>
+   host:     <%= ENV['#{@app_name.upcase}_DATABASE_HOST'] %>
   staging:
-    <<: *default
-    database: #{app_name}_staging
-    username: #{app_name}
-    password: <%= ENV['#{@app_name.upcase}_DATABASE_PASSWORD'] %>
-    host:     <%= ENV['#{@app_name.upcase}_DATABASE_HOST'] %>
+   <<: *default
+   database: #{app_name}_staging
+   username: #{app_name}
+   password: <%= ENV['#{@app_name.upcase}_DATABASE_PASSWORD'] %>
+   host:     <%= ENV['#{@app_name.upcase}_DATABASE_HOST'] %>
 CODE
 
 ### unicorn ###
@@ -148,7 +147,7 @@ initializer 'exception_notification.rb', <<~CODE
   end
 CODE
 
-%w(development edge production staging test).each do |env|
+%w[development edge production staging test].each do |env|
   append_file "config/settings/#{env}.yml", <<~CODE
     domain: '*'
 

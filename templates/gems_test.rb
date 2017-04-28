@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 ### rspec-rails ###
 generate 'rspec:install'
 

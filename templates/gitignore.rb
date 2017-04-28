@@ -1,8 +1,9 @@
 # frozen_string_literal: true
+
 ### .gitignore ###
 GITIGNORE_IO_URL = 'https://www.gitignore.io/api/'
 
-IGNORES = %w(
+IGNORES = %w[
   ruby
   rails
   sublimetext
@@ -11,6 +12,6 @@ IGNORES = %w(
   linux
   osx
   windows
-).freeze
+].freeze
 
 run "curl -sL #{GITIGNORE_IO_URL + IGNORES.join(',')} > .gitignore"

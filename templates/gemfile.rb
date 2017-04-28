@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 ### Gemfile ###
 remove_file 'Gemfile.lock'
 create_file 'Gemfile', <<~CODE, force: true
