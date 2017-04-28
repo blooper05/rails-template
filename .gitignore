@@ -8,6 +8,7 @@
 # User-specific stuff:
 .idea/**/workspace.xml
 .idea/**/tasks.xml
+.idea/dictionaries
 
 # Sensitive or high-churn files:
 .idea/**/dataSources/
@@ -21,6 +22,9 @@
 # Gradle:
 .idea/**/gradle.xml
 .idea/**/libraries
+
+# CMake
+cmake-build-debug/
 
 # Mongo Explorer plugin:
 .idea/**/mongoSettings.xml
@@ -39,6 +43,9 @@
 # JIRA plugin
 atlassian-ide-plugin.xml
 
+# Cursive Clojure plugin
+.idea/replstate.xml
+
 # Crashlytics plugin (for Android Studio and IntelliJ)
 com_crashlytics_export_strings.xml
 crashlytics.properties
@@ -52,6 +59,9 @@ fabric.properties
 # modules.xml
 # .idea/misc.xml
 # *.ipr
+
+# Sonarlint plugin
+.idea/sonarlint
 
 ### Linux ###
 *~
@@ -75,7 +85,6 @@ fabric.properties
 
 # Icon must end with two \r
 Icon
-
 
 # Thumbnails
 ._*
@@ -107,7 +116,7 @@ capybara-*.html
 /public/system
 /coverage/
 /spec/tmp
-**.orig
+*.orig
 rerun.txt
 pickle-email-*.html
 
