@@ -1,13 +1,17 @@
 # frozen_string_literal: true
 
-TEMPLATES_PATH = "#{File.dirname(__FILE__)}/templates"
+PATH = "#{File.dirname(__FILE__)}/templates"
 
-apply "#{TEMPLATES_PATH}/gitignore.rb"
-apply "#{TEMPLATES_PATH}/gemfile.rb"
-apply "#{TEMPLATES_PATH}/rails.rb"
-apply "#{TEMPLATES_PATH}/gems_all.rb"
-apply "#{TEMPLATES_PATH}/gems_development_test.rb"
-apply "#{TEMPLATES_PATH}/gems_test.rb"
-apply "#{TEMPLATES_PATH}/gems_development.rb"
-apply "#{TEMPLATES_PATH}/gems_deployment.rb"
-apply "#{TEMPLATES_PATH}/project.rb"
+FILES = %w[
+  gitignore
+  gemfile
+  rails
+  gems_all
+  gems_development_test
+  gems_test
+  gems_development
+  gems_deployment
+  project
+].freeze
+
+FILES.each { |file| apply "#{PATH}/#{file}.rb" }
