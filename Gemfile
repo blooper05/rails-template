@@ -2,5 +2,5 @@
 
 source 'https://rubygems.org'
 
-gem 'rails'   # A full-stack web framework optimized for programmer happiness and sustainable productivity
-gem 'rubocop' # A Ruby static code analyzer
+gem 'rails'   # Full-stack web application framework.
+gem 'rubocop' # Automatic Ruby code style checking tool.
