@@ -1,4 +1,5 @@
 AllCops:
+  DefaultFormatter: fuubar
   DisplayCopNames: true
   DisplayStyleGuide: true
 
