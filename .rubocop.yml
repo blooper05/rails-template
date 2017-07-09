@@ -5,3 +5,17 @@ AllCops:
 
 Rails:
   Enabled: true
+
+#################### Style #################################
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: comma
+
+#################### Metrics ###############################
+
+Metrics/LineLength:
+  Exclude:
+    - Gemfile
