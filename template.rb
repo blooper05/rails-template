@@ -3,7 +3,6 @@
 PATH = "#{File.dirname(__FILE__)}/templates"
 
 FILES = %w[
-  gitignore
   gemfile
   rails
   gems_all
