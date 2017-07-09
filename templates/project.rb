@@ -13,6 +13,8 @@ after_bundle do
   remove_file 'templates'
 
   git :init
-  git add: '.'
-  git commit: "-a -m 'Initial commit'"
+  git commit: "--allow-empty -m ':tada: Initial commit'"
+  git commit: <<~MSG
+    -a -m ':shell: rails new . -m template.rb -d postgresql -GCSTB --api -f'
+  MSG
 end
