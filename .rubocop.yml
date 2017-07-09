@@ -1,4 +1,6 @@
 AllCops:
+  Exclude:
+    - db/schema.rb
   DefaultFormatter: fuubar
   DisplayCopNames: true
   DisplayStyleGuide: true
