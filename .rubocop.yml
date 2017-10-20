@@ -5,6 +5,7 @@ AllCops:
   DefaultFormatter: fuubar
   DisplayCopNames: true
   DisplayStyleGuide: true
+  ExtraDetails: true
 
 Rails:
   Enabled: true
