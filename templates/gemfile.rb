@@ -89,7 +89,9 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'prmd'              # JSON Schema tools and doc generation for HTTP APIs
     gem 'jdoc'              # Generate API documentation from JSON Schema
     gem 'terminal-notifier' # Send User Notifications on Mac OS X 10.8 from the command-line
+  end
 
+  group :deployment do
     ### Deployment ###
     gem 'capistrano'               # Remote multi-server automation tool
     gem 'capistrano-rbenv'         # Idiomatic rbenv support for Capistrano
