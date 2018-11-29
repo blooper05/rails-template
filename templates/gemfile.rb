@@ -64,7 +64,7 @@ create_file 'Gemfile', <<~CODE, force: true
     ### Testing ###
     gem 'rspec-rails'             # A testing framework for Rails 3.x and 4.x
     gem 'rspec-request_describer' # Force some rules to write self-documenting request spec
-    gem 'factory_girl_rails'      # A fixtures replacement
+    gem 'factory_bot_rails'       # A fixtures replacement
     gem 'timecop'                 # Making it dead simple to test time-dependent code
     gem 'database_rewinder'       # Minimalist's tiny and ultra-fast database cleaner
     gem 'fuubar'                  # The instafailing RSpec progress bar formatter
