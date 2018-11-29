@@ -76,6 +76,7 @@ create_file 'Gemfile', <<~CODE, force: true
     ### Analysis ###
     gem 'brakeman'             # A static analysis security vulnerability scanner
     gem 'bullet'               # Help to kill N+1 queries and unused eager loading
+    gem 'snip_snip'            # SnipSnip cuts the deadweight
     gem 'rubocop'              # A Ruby static code analyzer
     gem 'rails_best_practices' # A code metric tool for rails projects
     gem 'reek'                 # Code smell detector for Ruby
