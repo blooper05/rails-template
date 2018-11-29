@@ -15,6 +15,6 @@ after_bundle do
   git :init
   git commit: "--allow-empty -m ':tada: Initial commit'"
   git commit: <<~MSG
-    -a -m ':shell: rails new . -m template.rb -d postgresql -GCSTB --api -f'
+    -a -m ':shell: rails new . -m template.rb -d postgresql -GCMSTB --api -f'
   MSG
 end
