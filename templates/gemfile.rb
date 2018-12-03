@@ -28,7 +28,7 @@ create_file 'Gemfile', <<~CODE, force: true
   gem 'oj_mimic_json'
   gem 'jwt'
   gem 'rack-json_schema'
-  gem 'kaminari'
+  gem 'pagy'
 
   ### Setting ###
   gem 'config'
