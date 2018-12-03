@@ -22,7 +22,7 @@ create_file 'Gemfile', <<~CODE, force: true
 
   ### API ###
   gem 'rack-cors'
-  gem 'active_model_serializers'
+  gem 'fast_jsonapi'
   gem 'versionist'
   gem 'oj'
   gem 'oj_mimic_json'
