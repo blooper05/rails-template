@@ -7,11 +7,19 @@ create_file 'Gemfile', <<~CODE, force: true
 
   ruby File.read('.ruby-version').strip
 
-  ### Application ###
+  ### Rails ###
   gem 'rails'
-  gem 'pg'
   gem 'unicorn'
   gem 'unicorn-worker-killer'
+
+  ### Database ###
+  gem 'pg'
+  gem 'bcrypt'
+  gem 'aasm'
+  gem 'enumerize'
+  gem 'default_value_for'
+  gem 'active_type'
+  gem 'seed-fu'
 
   ### API ###
   gem 'rack-cors'
@@ -22,14 +30,6 @@ create_file 'Gemfile', <<~CODE, force: true
   gem 'jwt'
   gem 'rack-json_schema'
   gem 'kaminari'
-
-  ### Model ###
-  gem 'bcrypt'
-  gem 'aasm'
-  gem 'enumerize'
-  gem 'default_value_for'
-  gem 'active_type'
-  gem 'seed-fu'
 
   ### Setting ###
   gem 'config'
