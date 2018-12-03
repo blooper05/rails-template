@@ -17,7 +17,6 @@ create_file 'Gemfile', <<~CODE, force: true
   gem 'bcrypt'
   gem 'aasm'
   gem 'enumerize'
-  gem 'default_value_for'
   gem 'active_type'
   gem 'seed-fu'
 
