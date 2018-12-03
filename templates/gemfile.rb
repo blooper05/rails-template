@@ -10,7 +10,7 @@ create_file 'Gemfile', <<~CODE, force: true
   ### Rails ###
   gem 'rails'
   gem 'puma'
-  gem 'unicorn-worker-killer'
+  gem 'puma_worker_killer'
 
   ### Database ###
   gem 'pg'
