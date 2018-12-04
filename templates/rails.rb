@@ -14,9 +14,9 @@ create_file 'config/locales/ja.yml'
 application do
   <<-CODE.lstrip
     ### Generators ###
-    config.generators do |g|
-      g.test_framework      :rspec
-      g.fixture_replacement :factory_bot, dir: 'spec/factories'
+    config.generators do |generator|
+      generator.test_framework      :rspec
+      generator.fixture_replacement :factory_bot, dir: 'spec/factories'
     end
 
     ### TimeZone ###
