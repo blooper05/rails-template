@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 ### bullet ###
-insert_into_file 'config/environments/test.rb', <<-CODE, before: /^end$/
+insert_into_file 'config/environments/test.rb', <<-CODE, before: /^end\Z/
 
   ### Bullet ###
   Bullet.enable        = true
@@ -9,7 +9,7 @@ insert_into_file 'config/environments/test.rb', <<-CODE, before: /^end$/
   Bullet.raise         = true
 CODE
 
-insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end$/
+insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end\Z/
 
   ### Bullet ###
   config.before(:each) { Bullet.start_request }

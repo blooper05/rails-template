@@ -75,7 +75,7 @@ run 'wheneverize .'
 route "mount KomachiHeartbeat::Engine => '/healthcheck'\n"
 
 ### chrono_logger ###
-insert_into_file 'config/environments/production.rb', <<-'CODE', before: /^end$/
+insert_into_file 'config/environments/production.rb', <<-'CODE', before: /^end\Z/
 
   ### ChronoLogger ###
   config.logger = ::ChronoLogger.new("#{config.paths[\'log\'].first}.%Y%m%d")

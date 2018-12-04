@@ -11,14 +11,14 @@ create_file 'spec/models/.keep'
 create_file 'spec/support/utilities.rb'
 
 ### rspec-request_describer ###
-insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end$/
+insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end\Z/
 
   ### RSpec::RequestDescriber ###
   config.include RSpec::RequestDescriber, type: :request
 CODE
 
 ### factory_bot_rails ###
-insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end$/
+insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end\Z/
 
   ### Factory Bot ###
   config.before(:suite) { FactoryBot.reload }
@@ -26,14 +26,14 @@ insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end$/
 CODE
 
 ### timecop ###
-insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end$/
+insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end\Z/
 
   ### timecop ###
   config.after(:each) { Timecop.return }
 CODE
 
 ### database_rewinder ###
-insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end$/
+insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end\Z/
 
   ### DatabaseRewinder ###
   config.before(:suite) { DatabaseRewinder.clean_all }
