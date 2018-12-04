@@ -98,6 +98,7 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'flog'
     gem 'flay'
     gem 'fasterer'
+    gem 'debride'
 
     ### Utility ###
     gem 'annotate'
