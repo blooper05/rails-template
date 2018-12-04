@@ -74,6 +74,7 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'timecop'
     gem 'database_rewinder'
     gem 'fuubar'
+    gem 'flatware'
 
     ### Analysis ###
     gem 'simplecov'
