@@ -97,6 +97,7 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'synvert'
 
     ### Utility ###
+    gem 'i18n_generators'
     gem 'annotate'
     gem 'annotate_gem'
     gem 'rails-erd'
