@@ -67,6 +67,7 @@ create_file 'Gemfile', <<~CODE, force: true
     ### Testing ###
     gem 'rspec-rails'
     gem 'rspec-request_describer'
+    gem 'apivore'
     gem 'factory_bot_rails'
     gem 'timecop'
     gem 'database_rewinder'
