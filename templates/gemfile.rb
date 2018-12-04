@@ -47,7 +47,6 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'pry-rails'
     gem 'pry-coolline'
     gem 'hirb'
-    gem 'hirb-unicode'
     gem 'awesome_print'
     gem 'pry-byebug'
 
