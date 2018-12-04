@@ -4,4 +4,4 @@
 run 'spring binstub --all'
 
 ### rubocop ###
-run 'rubocop --auto-correct'
+run 'rubocop --auto-correct --format simple'
