@@ -41,7 +41,7 @@ insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end\Z/
 CODE
 
 ### fuubar ###
-comment_lines '.gitignore', '.rspec'
+append_file '.gitignore', "\n!.rspec\n"
 append_file '.rspec', '--format Fuubar'
 
 ### simplecov-json ###
