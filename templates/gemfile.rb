@@ -121,6 +121,7 @@ create_file 'Gemfile', <<~CODE, force: true
 
     ### Command ###
     gem 'spring'
+    gem 'spring-watcher-listen'
     gem 'spring-commands-rspec'
     gem 'spring-commands-rubocop'
   end
