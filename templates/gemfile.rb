@@ -59,6 +59,7 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'brakeman'
     gem 'ruby_audit'
     gem 'bundler-audit'
+    gem 'license_finder'
     gem 'bullet',    group: :edge
     gem 'snip_snip', group: :edge
   end
