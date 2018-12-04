@@ -89,8 +89,9 @@ create_file 'Gemfile', <<~CODE, force: true
   end
 
   group :development do
-    ### Analysis ###
+    ### Lint ###
     gem 'rubocop'
+    gem 'rubocop-rspec'
     gem 'rails_best_practices'
     gem 'reek'
     gem 'flay'
