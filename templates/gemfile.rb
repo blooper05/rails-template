@@ -9,6 +9,7 @@ create_file 'Gemfile', <<~CODE, force: true
 
   ### Rails ###
   gem 'rails'
+  gem 'bootsnap'
   gem 'puma'
   gem 'puma_worker_killer'
 
