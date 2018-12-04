@@ -33,6 +33,8 @@ create_file '.erdconfig', <<~CODE
     - inheritance
     - content
   filetype: png
-  orientation: vertical
   sort: false
+  exclude:
+    - ActiveRecord::InternalMetadata
+    - ActiveRecord::SchemaMigration
 CODE
