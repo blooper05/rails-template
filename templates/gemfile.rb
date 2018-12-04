@@ -52,6 +52,7 @@ create_file 'Gemfile', <<~CODE, force: true
 
     ### Analysis ###
     gem 'brakeman'
+    gem 'ruby_audit'
     gem 'bullet'
     gem 'snip_snip'
 
