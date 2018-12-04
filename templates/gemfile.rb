@@ -103,6 +103,7 @@ create_file 'Gemfile', <<~CODE, force: true
 
     ### Utility ###
     gem 'annotate'
+    gem 'annotate_gem'
     gem 'rails-erd'
     gem 'prmd'
     gem 'jdoc'
