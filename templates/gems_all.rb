@@ -81,7 +81,7 @@ remove_file 'db/seeds.rb'
 run 'wheneverize .'
 
 ### komachi_heartbeat ###
-route "mount KomachiHeartbeat::Engine => '/healthcheck'\n"
+route "mount KomachiHeartbeat::Engine => '/healthcheck'\n\n"
 
 ### chrono_logger ###
 insert_into_file 'config/environments/production.rb', <<-'CODE', before: /^end\Z/
