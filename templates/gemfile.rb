@@ -105,7 +105,6 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'annotate'
     gem 'annotate_gem'
     gem 'rails-erd'
-    gem 'jdoc'
     gem 'terminal-notifier'
   end
 
