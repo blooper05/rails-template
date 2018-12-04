@@ -78,6 +78,9 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'simplecov'
     gem 'simplecov-json'
     gem 'test-prof'
+
+    ### CI ###
+    gem 'danger'
   end
 
   group :development do
