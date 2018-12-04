@@ -5,13 +5,13 @@ run 'cap install STAGES=edge,staging,production'
 create_file 'lib/capistrano/tasks/.keep'
 
 ### capistrano-rbenv ###
-uncomment_lines 'Capfile', "require 'capistrano/rbenv'"
+uncomment_lines 'Capfile', 'require "capistrano/rbenv"'
 
 ### capistrano-bundler ###
-uncomment_lines 'Capfile', "require 'capistrano/bundler'"
+uncomment_lines 'Capfile', 'require "capistrano/bundler"'
 
 ### capistrano-rails ###
-uncomment_lines 'Capfile', "require 'capistrano/rails/migrations'"
+uncomment_lines 'Capfile', 'require "capistrano/rails/migrations"'
 
 ### seed-fu ###
 insert_into_file 'Capfile', "require 'seed-fu/capistrano3'\n",
