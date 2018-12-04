@@ -104,6 +104,7 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'fasterer'
     gem 'debride'
     gem 'synvert'
+    gem 'rails_refactor'
 
     ### Utility ###
     gem 'i18n_generators'
