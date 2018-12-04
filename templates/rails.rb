@@ -30,11 +30,3 @@ end
 
 ### config/routes.rb ###
 gsub_file 'config/routes.rb', /^\s*#.*\n/, ''
-
-### config/secrets.yml ###
-append_file 'config/secrets.yml', <<~CODE
-  edge:
-   secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
-  staging:
-   secret_key_base: <%= ENV["SECRET_KEY_BASE"] %>
-CODE
