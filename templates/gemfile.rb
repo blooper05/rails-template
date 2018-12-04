@@ -38,6 +38,7 @@ create_file 'Gemfile', <<~CODE, force: true
   ### Monitoring ###
   gem 'komachi_heartbeat'
   gem 'newrelic_rpm'
+  gem 'ltsv_log_formatter'
   gem 'chrono_logger'
   gem 'exception_notification'
   gem 'slack-notifier'
