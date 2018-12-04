@@ -35,6 +35,7 @@ create_file 'Gemfile', <<~CODE, force: true
   ### API Documentation ###
   group :edge, :development, :test do
     gem 'swagger-blocks'
+    gem 'swagger_ui_engine'
   end
 
   ### CLI ###
