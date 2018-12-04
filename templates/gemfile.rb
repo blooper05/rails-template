@@ -55,6 +55,7 @@ create_file 'Gemfile', <<~CODE, force: true
     ### Analysis ###
     gem 'strong_migrations'
     gem 'unique_validation_inspector'
+    gem 'i18n-tasks'
     gem 'brakeman'
     gem 'ruby_audit'
     gem 'bundler-audit'
