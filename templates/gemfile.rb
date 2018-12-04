@@ -18,6 +18,7 @@ create_file 'Gemfile', <<~CODE, force: true
   gem 'aasm'
   gem 'counter_culture'
   gem 'enumerize'
+  gem 'ranked-model'
   gem 'active_type'
   gem 'seed-fu'
 
