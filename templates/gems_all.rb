@@ -21,7 +21,7 @@ CODE
 initializer 'rack-cors.rb', <<~CODE
   Rails.application.config.middleware.insert_before 0, Rack::Cors do
     allow do
-      origins Settings.domain
+      origins '' # FIXME
       resource '*', headers: :any,
                     methods: %i[get post put patch delete options head]
     end
