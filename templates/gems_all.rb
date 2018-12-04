@@ -31,6 +31,13 @@ CODE
 ### versionist ###
 lib 'generators/versionist/new_api_version/new_api_version_generator.rb', <<~'CODE'
   module SerializedVersionist
+    def add_routes
+      super
+      gsub_file 'config/routes.rb', /api_version\(.+\) do\n\s+end/ do |match|
+        match.sub('end', "end\n")
+      end
+    end
+
     def add_presenters_base
       in_root do
         create_file "app/serializers/#{module_name_for_path(module_name)}/.keep"
@@ -64,7 +71,7 @@ lib 'generators/versionist/new_api_version/new_api_version_generator.rb', <<~'CO
   end
 CODE
 
-generate 'versionist:new_api_version v1 V1 --path=value:v1'
+generate 'versionist:new_api_version v1 V1 --path=value:v1 --default'
 
 ### seed-fu ###
 create_file 'db/fixtures/.keep'
