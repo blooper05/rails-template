@@ -16,6 +16,7 @@ create_file 'Gemfile', <<~CODE, force: true
   gem 'pg'
   gem 'bcrypt'
   gem 'aasm'
+  gem 'counter_culture'
   gem 'enumerize'
   gem 'active_type'
   gem 'seed-fu'
