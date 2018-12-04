@@ -64,8 +64,6 @@ initializer 'versionist.rb', <<~'CODE'
   end
 CODE
 
-generate 'versionist:new_api_version v1 V1 --path=value:v1'
-
 ### seed-fu ###
 create_file 'db/fixtures/.keep'
 remove_file 'db/seeds.rb'
