@@ -78,5 +78,5 @@ route "mount KomachiHeartbeat::Engine => '/healthcheck'\n"
 insert_into_file 'config/environments/production.rb', <<-'CODE', before: /^end\Z/
 
   ### ChronoLogger ###
-  config.logger = ::ChronoLogger.new("#{config.paths[\'log\'].first}.%Y%m%d")
+  config.logger = ::ChronoLogger.new("#{config.paths['log'].first}.%Y%m%d")
 CODE
