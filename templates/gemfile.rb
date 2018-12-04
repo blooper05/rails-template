@@ -99,6 +99,7 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'rails_best_practices'
     gem 'reek'
     gem 'flog'
+    gem 'fukuzatsu'
     gem 'flay'
     gem 'fasterer'
     gem 'debride'
