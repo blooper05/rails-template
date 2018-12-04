@@ -44,12 +44,12 @@ CODE
 comment_lines '.gitignore', '.rspec'
 append_file '.rspec', '--format Fuubar'
 
-### simplecov ###
-insert_into_file 'spec/rails_helper.rb', "\n\nrequire 'simplecov'",
-                 after: /^# Add additional requires below this line.+$/
+### simplecov-json ###
+prepend_file 'spec/rails_helper.rb', <<~CODE
+  require 'simplecov'
+  require 'simplecov-json'
 
-create_file '.simplecov', <<~CODE
-  SimpleCov.start 'rails'
-
-  # vim: set ft=ruby:
+  SimpleCov.start :rails do
+    formatter SimpleCov::Formatter::JSONFormatter if ENV['CIRCLECI']
+  end
 CODE
