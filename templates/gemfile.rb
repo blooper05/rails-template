@@ -99,6 +99,7 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'flay'
     gem 'fasterer'
     gem 'debride'
+    gem 'synvert'
 
     ### Utility ###
     gem 'annotate'
