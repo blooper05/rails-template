@@ -95,6 +95,7 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'mry'
     gem 'rails_best_practices'
     gem 'reek'
+    gem 'flog'
     gem 'flay'
     gem 'fasterer'
 
