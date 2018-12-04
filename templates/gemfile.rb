@@ -50,6 +50,11 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'awesome_print'
     gem 'pry-byebug'
 
+    ### Analysis ###
+    gem 'brakeman'
+    gem 'bullet'
+    gem 'snip_snip'
+
     ### Command ###
     gem 'spring'
     gem 'spring-commands-rspec'
@@ -69,9 +74,6 @@ create_file 'Gemfile', <<~CODE, force: true
 
   group :development do
     ### Analysis ###
-    gem 'brakeman'
-    gem 'bullet'
-    gem 'snip_snip'
     gem 'rubocop'
     gem 'rails_best_practices'
     gem 'reek'
