@@ -73,7 +73,10 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'timecop'
     gem 'database_rewinder'
     gem 'fuubar'
+
+    ### Analysis ###
     gem 'simplecov'
+    gem 'simplecov-json'
   end
 
   group :development do
