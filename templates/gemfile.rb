@@ -32,7 +32,6 @@ create_file 'Gemfile', <<~CODE, force: true
 
   ### Setting ###
   gem 'config'
-  gem 'dotenv-rails'
 
   ### CLI ###
   gem 'thor'
