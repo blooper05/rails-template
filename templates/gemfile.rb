@@ -32,6 +32,11 @@ create_file 'Gemfile', <<~CODE, force: true
   gem 'pagy'
   gem 'action_args'
 
+  ### API Documentation ###
+  group :edge, :development, :test do
+    gem 'swagger-blocks'
+  end
+
   ### CLI ###
   gem 'thor'
   gem 'formatador'
