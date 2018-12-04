@@ -33,7 +33,6 @@ create_file 'Gemfile', <<~CODE, force: true
   ### Setting ###
   gem 'config'
   gem 'dotenv-rails'
-  gem 'rails-i18n'
 
   ### CLI ###
   gem 'thor'
