@@ -84,6 +84,7 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'danger-rubocop'
     gem 'danger-rails_best_practices'
     gem 'danger-reek'
+    gem 'danger-simplecov_json'
   end
 
   group :development do
