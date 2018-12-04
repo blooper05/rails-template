@@ -54,8 +54,8 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'brakeman'
     gem 'ruby_audit'
     gem 'bundler-audit'
-    gem 'bullet'
-    gem 'snip_snip'
+    gem 'bullet',    group: :edge
+    gem 'snip_snip', group: :edge
 
     ### Command ###
     gem 'spring'
