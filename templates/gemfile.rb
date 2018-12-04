@@ -30,9 +30,6 @@ create_file 'Gemfile', <<~CODE, force: true
   gem 'jwt'
   gem 'pagy'
 
-  ### Setting ###
-  gem 'config'
-
   ### CLI ###
   gem 'thor'
   gem 'formatador'
