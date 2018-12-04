@@ -9,9 +9,9 @@ create_file 'Gemfile', <<~CODE, force: true
 
   ### Rails ###
   gem 'rails'
-  gem 'bootsnap'
+  gem 'bootsnap',           require: false
   gem 'puma'
-  gem 'puma_worker_killer'
+  gem 'puma_worker_killer', require: false
 
   ### Database ###
   gem 'pg'
@@ -42,7 +42,7 @@ create_file 'Gemfile', <<~CODE, force: true
   ### CLI ###
   gem 'thor'
   gem 'formatador'
-  gem 'whenever'
+  gem 'whenever', require: false
 
   ### Monitoring ###
   gem 'komachi_heartbeat'
