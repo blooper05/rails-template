@@ -82,6 +82,7 @@ create_file 'Gemfile', <<~CODE, force: true
     ### CI ###
     gem 'danger'
     gem 'danger-rubocop'
+    gem 'danger-rails_best_practices'
   end
 
   group :development do
