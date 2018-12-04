@@ -30,6 +30,7 @@ create_file 'Gemfile', <<~CODE, force: true
   gem 'oj_mimic_json'
   gem 'knock'
   gem 'pagy'
+  gem 'action_args'
 
   ### CLI ###
   gem 'thor'
