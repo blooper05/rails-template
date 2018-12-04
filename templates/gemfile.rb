@@ -85,6 +85,7 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'danger-rails_best_practices'
     gem 'danger-reek'
     gem 'danger-simplecov_json'
+    gem 'rspec_junit_formatter'
   end
 
   group :development do
