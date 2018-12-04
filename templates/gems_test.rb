@@ -37,7 +37,7 @@ insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end$/
 
   ### DatabaseRewinder ###
   config.before(:suite) { DatabaseRewinder.clean_all }
-  config.after(:each) { DatabaseRewinder.clean }
+  config.after { DatabaseRewinder.clean }
 CODE
 
 ### fuubar ###
