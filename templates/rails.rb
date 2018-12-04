@@ -19,6 +19,11 @@ application do
       generator.fixture_replacement :factory_bot, dir: 'spec/factories'
     end
 
+    ### Routing ###
+    config.paths['config/routes.rb'].concat(
+      Dir[Rails.root.join('config', 'routes', '**.rb')],
+    )
+
     ### TimeZone ###
     config.time_zone                      = 'Tokyo'
     config.active_record.default_timezone = :local
