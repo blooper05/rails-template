@@ -52,4 +52,5 @@ prepend_file 'spec/rails_helper.rb', <<~CODE
   SimpleCov.start :rails do
     formatter SimpleCov::Formatter::JSONFormatter if ENV['CIRCLECI']
   end
+
 CODE

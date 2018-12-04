@@ -30,6 +30,7 @@ application do
 
     ### Locale ###
     config.i18n.default_locale = :ja
+
   CODE
 end
 
