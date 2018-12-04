@@ -13,10 +13,6 @@ uncomment_lines 'Capfile', "require 'capistrano/bundler'"
 ### capistrano-rails ###
 uncomment_lines 'Capfile', "require 'capistrano/rails/migrations'"
 
-### capistrano3/unicorn ###
-insert_into_file 'Capfile', "require 'capistrano3/unicorn'\n",
-                 before: "\n# Load custom tasks from `lib/capistrano/tasks`"
-
 ### seed-fu ###
 insert_into_file 'Capfile', "require 'seed-fu/capistrano3'\n",
                  before: "\n# Load custom tasks from `lib/capistrano/tasks`"
