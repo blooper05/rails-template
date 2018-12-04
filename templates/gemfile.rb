@@ -113,7 +113,7 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'capistrano-rbenv'
     gem 'capistrano-bundler'
     gem 'capistrano-rails'
-    gem 'capistrano3-unicorn'
+    gem 'capistrano3-puma'
     gem 'capistrano-rails-console'
     gem 'slackistrano'
   end
