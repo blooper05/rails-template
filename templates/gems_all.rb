@@ -29,7 +29,7 @@ initializer 'rack-cors.rb', <<~CODE
 CODE
 
 ### versionist ###
-initializer 'versionist.rb', <<~'CODE'
+lib 'generators/versionist/new_api_version/new_api_version_generator.rb', <<~'CODE'
   module SerializedVersionist
     def add_presenters_base
       in_root do
@@ -63,6 +63,8 @@ initializer 'versionist.rb', <<~'CODE'
     prepend SerializedVersionist
   end
 CODE
+
+generate 'versionist:new_api_version v1 V1 --path=value:v1'
 
 ### seed-fu ###
 create_file 'db/fixtures/.keep'
