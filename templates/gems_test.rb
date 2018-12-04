@@ -17,12 +17,12 @@ insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end$/
   config.include RSpec::RequestDescriber, type: :request
 CODE
 
-### factory_girl_rails ###
+### factory_bot_rails ###
 insert_into_file 'spec/rails_helper.rb', <<-CODE, before: /^end$/
 
-  ### Factory Girl ###
-  config.before(:suite) { FactoryGirl.reload }
-  config.include FactoryGirl::Syntax::Methods
+  ### Factory Bot ###
+  config.before(:suite) { FactoryBot.reload }
+  config.include FactoryBot::Syntax::Methods
 CODE
 
 ### timecop ###
