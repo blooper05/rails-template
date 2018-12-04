@@ -27,7 +27,7 @@ create_file 'Gemfile', <<~CODE, force: true
   gem 'versionist'
   gem 'oj'
   gem 'oj_mimic_json'
-  gem 'jwt'
+  gem 'knock'
   gem 'pagy'
 
   ### CLI ###
