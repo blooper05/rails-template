@@ -53,6 +53,7 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'pry-byebug'
 
     ### Analysis ###
+    gem 'strong_migrations'
     gem 'brakeman'
     gem 'ruby_audit'
     gem 'bundler-audit'
