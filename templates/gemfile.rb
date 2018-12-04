@@ -77,6 +77,7 @@ create_file 'Gemfile', <<~CODE, force: true
     ### Analysis ###
     gem 'simplecov'
     gem 'simplecov-json'
+    gem 'test-prof'
   end
 
   group :development do
