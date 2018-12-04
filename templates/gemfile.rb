@@ -56,11 +56,6 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'bundler-audit'
     gem 'bullet',    group: :edge
     gem 'snip_snip', group: :edge
-
-    ### Command ###
-    gem 'spring'
-    gem 'spring-commands-rspec'
-    gem 'spring-commands-rubocop'
   end
 
   group :test do
@@ -105,6 +100,11 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'annotate'
     gem 'annotate_gem'
     gem 'rails-erd'
+
+    ### Command ###
+    gem 'spring'
+    gem 'spring-commands-rspec'
+    gem 'spring-commands-rubocop'
   end
 
   group :deployment do
