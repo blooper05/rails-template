@@ -17,6 +17,24 @@ append_file 'config/database.yml', <<~CODE
     host:     <%= ENV['#{@app_name.upcase}_DATABASE_HOST'] %>
 CODE
 
+### puma ###
+prepend_file 'config/puma.rb', <<~'CODE'
+  APP_PATH = File.expand_path('..', __dir__)
+  PRD_FLAG = (ENV.fetch('RAILS_ENV') == 'production')
+
+  if PRD_FLAG
+    pidfile "#{APP_PATH}/tmp/pids/server.pid"
+    bind    "unix://#{APP_PATH}/tmp/sockets/server.sock"
+
+    daemonize true
+  end
+
+CODE
+
+comment_lines 'config/puma.rb', 'port        ENV.fetch\("PORT"\) { 3000 }'
+uncomment_lines 'config/puma.rb', 'workers ENV.fetch\("WEB_CONCURRENCY"\) { 2 }'
+uncomment_lines 'config/puma.rb', 'preload_app!$'
+
 ### rack-cors ###
 initializer 'rack-cors.rb', <<~CODE
   Rails.application.config.middleware.insert_before 0, Rack::Cors do
