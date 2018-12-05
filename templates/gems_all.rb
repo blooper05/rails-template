@@ -35,6 +35,24 @@ comment_lines 'config/puma.rb', 'port        ENV.fetch\("PORT"\) { 3000 }'
 uncomment_lines 'config/puma.rb', 'workers ENV.fetch\("WEB_CONCURRENCY"\) { 2 }'
 uncomment_lines 'config/puma.rb', 'preload_app!$'
 
+### puma_worker_killer ###
+append_file 'config/puma.rb', <<~'CODE'
+
+  ### Puma Worker Killer ###
+  before_fork do
+    require 'puma_worker_killer'
+
+    PumaWorkerKiller.config do |config|
+      config.ram                       = 1024 # megabytes # FIXME
+      config.frequency                 = 30   # seconds
+      config.percent_usage             = 0.65
+      config.rolling_restart_frequency = 6.hours
+    end
+
+    PumaWorkerKiller.start
+  end
+CODE
+
 ### rack-cors ###
 initializer 'rack-cors.rb', <<~CODE
   Rails.application.config.middleware.insert_before 0, Rack::Cors do
