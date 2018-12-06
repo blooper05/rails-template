@@ -116,6 +116,10 @@ generate 'versionist:new_api_version v1 V1 --path=value:v1 --default'
 ### knock ###
 generate 'knock:install'
 
+### swagger-blocks ###
+create_file 'app/controllers/concerns/swagger/.keep'
+create_file 'app/models/concerns/swagger/.keep'
+
 ### whenever ###
 run 'wheneverize .'
 
