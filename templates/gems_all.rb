@@ -147,6 +147,9 @@ initializer 'sentry-raven.rb', <<~CODE
   end
 CODE
 
+### newrelic_rpm ###
+run "newrelic install #{@app_name}"
+
 ### chrono_logger ###
 insert_into_file 'config/environments/production.rb', <<-'CODE', before: /^end\Z/
 
