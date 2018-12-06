@@ -19,11 +19,6 @@ CODE
 ### annotate ###
 generate 'annotate:install'
 
-annotate_file = 'lib/tasks/auto_annotate_models.rake'
-gsub_file annotate_file, /'routes'\s+=>\s+'false'/ do |match|
-  match.sub('false', 'true')
-end
-
 ### rails-erd ###
 create_file '.erdconfig', <<~CODE
   attributes:
