@@ -75,9 +75,7 @@ lib 'generators/versionist/new_api_version/new_api_version_generator.rb', <<~'CO
       super
       gsub_file 'config/routes.rb', /api_version\(.+\) do\n\s+end/ do |match|
         match.sub('end', "end\n")
-      end
-    end
-
+      end end
     def add_presenters_base
       in_root do
         create_file "app/serializers/#{module_name_for_path(module_name)}/.keep"
@@ -136,6 +134,18 @@ run 'wheneverize .'
 
 ### komachi_heartbeat ###
 route "mount KomachiHeartbeat::Engine => '/healthcheck'\n\n"
+
+### sentry-raven ###
+initializer 'sentry-raven.rb', <<~CODE
+  Raven.configure do |config|
+    config.dsn = '' # FIXME: Rails.application.credentials.sentry.dsn
+
+    config.environments = %w[edge staging production]
+
+    config.sanitize_fields =
+      Rails.application.config.filter_parameters.map(&:to_s)
+  end
+CODE
 
 ### chrono_logger ###
 insert_into_file 'config/environments/production.rb', <<-'CODE', before: /^end\Z/
