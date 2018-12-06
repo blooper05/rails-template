@@ -64,6 +64,10 @@ initializer 'rack-cors.rb', <<~CODE
   end
 CODE
 
+### seed-fu ###
+create_file 'db/fixtures/.keep'
+remove_file 'db/seeds.rb'
+
 ### versionist ###
 lib 'generators/versionist/new_api_version/new_api_version_generator.rb', <<~'CODE'
   module SerializedVersionist
@@ -109,9 +113,8 @@ CODE
 
 generate 'versionist:new_api_version v1 V1 --path=value:v1 --default'
 
-### seed-fu ###
-create_file 'db/fixtures/.keep'
-remove_file 'db/seeds.rb'
+### knock ###
+generate 'knock:install'
 
 ### whenever ###
 run 'wheneverize .'
