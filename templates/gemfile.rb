@@ -39,6 +39,9 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'swagger_ui_engine'
   end
 
+  ### Setting ###
+  gem 'rails-env-credentials'
+
   ### CLI ###
   gem 'thor'
   gem 'formatador'
