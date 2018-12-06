@@ -150,6 +150,13 @@ CODE
 ### newrelic_rpm ###
 run "newrelic install #{@app_name}"
 
+### ltsv_log_formatter ###
+insert_into_file 'config/environments/production.rb', <<-'CODE', before: /^end\Z/
+
+  ### LtsvLogFormatter ###
+  config.log_formatter = LtsvLogFormatter.new
+CODE
+
 ### chrono_logger ###
 insert_into_file 'config/environments/production.rb', <<-'CODE', before: /^end\Z/
 
