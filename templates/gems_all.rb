@@ -54,7 +54,8 @@ append_file 'config/puma.rb', <<~'CODE'
 CODE
 
 ### rack-cors ###
-initializer 'rack-cors.rb', <<~CODE
+append_file 'config/initializers/cors.rb', <<~CODE
+
   Rails.application.config.middleware.insert_before 0, Rack::Cors do
     allow do
       origins '' # FIXME
