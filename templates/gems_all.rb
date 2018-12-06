@@ -136,7 +136,7 @@ run 'wheneverize .'
 route "mount KomachiHeartbeat::Engine => '/healthcheck'\n\n"
 
 ### sentry-raven ###
-initializer 'sentry-raven.rb', <<~CODE
+initializer 'sentry.rb', <<~CODE
   Raven.configure do |config|
     config.dsn = '' # FIXME: Rails.application.credentials.sentry.dsn
 
