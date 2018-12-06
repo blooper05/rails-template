@@ -102,7 +102,6 @@ create_file 'Gemfile', <<~CODE, force: true
 
   group :development do
     ### Lint ###
-    gem 'rufo'
     gem 'rubocop'
     gem 'rubocop-rspec'
     gem 'mry'
