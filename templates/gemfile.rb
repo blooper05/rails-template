@@ -127,17 +127,6 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'spring-commands-rspec'
     gem 'spring-commands-rubocop'
   end
-
-  group :deployment do
-    ### Deployment ###
-    gem 'capistrano'
-    gem 'capistrano-rbenv'
-    gem 'capistrano-bundler'
-    gem 'capistrano-rails'
-    gem 'capistrano3-puma'
-    gem 'capistrano-rails-console'
-    gem 'slackistrano'
-  end
 CODE
 
 ### bundle install ###

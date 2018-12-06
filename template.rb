@@ -9,7 +9,6 @@ FILES = %w[
   gems_development_test
   gems_test
   gems_development
-  gems_deployment
   project
 ].freeze
 
