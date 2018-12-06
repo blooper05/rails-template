@@ -120,6 +120,17 @@ generate 'knock:install'
 create_file 'app/controllers/concerns/swagger/.keep'
 create_file 'app/models/concerns/swagger/.keep'
 
+### swagger_ui_engine ###
+initializer 'swagger_ui_engine.rb', <<~CODE
+  def api_doc?
+    defined?(SwaggerUiEngine)
+  end
+
+  return unless api_doc?
+CODE
+
+route "mount SwaggerUiEngine::Engine => '/api/doc' if api_doc?\n\n"
+
 ### whenever ###
 run 'wheneverize .'
 
