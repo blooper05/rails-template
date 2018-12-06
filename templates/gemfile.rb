@@ -117,6 +117,7 @@ create_file 'Gemfile', <<~CODE, force: true
 
     ### Utility ###
     gem 'i18n_generators'
+    gem 'activerecord-simple_index_name'
     gem 'annotate'
     gem 'annotate_gem'
     gem 'rails-erd'
