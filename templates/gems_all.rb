@@ -18,7 +18,9 @@ append_file 'config/database.yml', <<~CODE
 CODE
 
 ### puma ###
-prepend_file 'config/puma.rb', <<~'CODE'
+append_file 'config/puma.rb', <<~'CODE'
+
+  ### Puma ###
   APP_PATH = File.expand_path('..', __dir__)
   PRD_FLAG = (ENV.fetch('RAILS_ENV') == 'production')
 
@@ -28,7 +30,6 @@ prepend_file 'config/puma.rb', <<~'CODE'
 
     daemonize true
   end
-
 CODE
 
 comment_lines 'config/puma.rb', 'port        ENV.fetch\("PORT"\) { 3000 }'
