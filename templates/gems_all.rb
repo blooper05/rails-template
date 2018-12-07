@@ -135,7 +135,7 @@ route "mount SwaggerUiEngine::Engine => '/api/doc' if api_doc?\n\n"
 run 'wheneverize .'
 
 ### komachi_heartbeat ###
-route "mount KomachiHeartbeat::Engine => '/healthcheck'\n\n"
+route "mount KomachiHeartbeat::Engine => '/'"
 
 ### sentry-raven ###
 initializer 'sentry.rb', <<~CODE
