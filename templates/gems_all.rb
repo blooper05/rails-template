@@ -139,6 +139,12 @@ insert_into_file 'app/controllers/swagger_controller.rb', <<-'CODE', after: "App
     key :produces, ['application/json']
   end
 
+  CONCERNS_PATH = Rails.root.join('app', 'controllers', 'concerns').freeze
+  CONCERNS_PATH.glob('swagger/**/*.rb') do |path|
+    relative_path = path.relative_path_from(CONCERNS_PATH)
+    include relative_path.sub_ext('').to_s.camelize.constantize
+  end
+
   SWAGGERED_CLASSES = [self].freeze
 
 CODE
