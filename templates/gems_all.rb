@@ -120,6 +120,33 @@ generate 'knock:install'
 create_file 'app/controllers/concerns/swagger/.keep'
 create_file 'app/models/concerns/swagger/.keep'
 
+generate 'controller Swagger index --skip-routes'
+route "resources :swagger, only: :index\n\n"
+
+insert_into_file 'app/controllers/swagger_controller.rb', <<-'CODE', after: "ApplicationController\n"
+  include Swagger::Blocks
+
+  swagger_root do
+    key :swagger, '2.0'
+
+    info do
+      key :version, '1.0.0'
+      key :title,   Rails.application.class.parent_name
+    end
+
+    key :basePath, '/'
+    key :consumes, ['application/json']
+    key :produces, ['application/json']
+  end
+
+  SWAGGERED_CLASSES = [self].freeze
+
+CODE
+
+insert_into_file 'app/controllers/swagger_controller.rb', <<-'CODE', after: "def index\n"
+    render json: Swagger::Blocks.build_root_json(SWAGGERED_CLASSES)
+CODE
+
 ### swagger_ui_engine ###
 initializer 'swagger_ui_engine.rb', <<~CODE
   def api_doc?
