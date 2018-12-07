@@ -154,9 +154,13 @@ initializer 'swagger_ui_engine.rb', <<~CODE
   end
 
   return unless api_doc?
+
+  SwaggerUiEngine.configure do |config|
+    config.swagger_url = { v1: '/swagger.json' }
+  end
 CODE
 
-route "mount SwaggerUiEngine::Engine => '/' if api_doc?\n\n"
+route "mount SwaggerUiEngine::Engine => '/' if api_doc?"
 
 ### whenever ###
 run 'wheneverize .'
