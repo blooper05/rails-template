@@ -111,7 +111,7 @@ lib 'generators/versionist/new_api_version/new_api_version_generator.rb', <<~'CO
   end
 CODE
 
-generate 'versionist:new_api_version v1 V1 --path=value:v1 --default'
+generate 'versionist:new_api_version v1 V1 --path=value:v1'
 
 ### knock ###
 generate 'knock:install'
