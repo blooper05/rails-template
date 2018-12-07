@@ -129,7 +129,7 @@ initializer 'swagger_ui_engine.rb', <<~CODE
   return unless api_doc?
 CODE
 
-route "mount SwaggerUiEngine::Engine => '/api/doc' if api_doc?\n\n"
+route "mount SwaggerUiEngine::Engine => '/' if api_doc?\n\n"
 
 ### whenever ###
 run 'wheneverize .'
