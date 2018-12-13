@@ -96,6 +96,7 @@ create_file 'Gemfile', <<~CODE, force: true
     gem 'danger-rubocop'
     gem 'danger-rails_best_practices'
     gem 'danger-reek'
+    gem 'danger-suggester'
     gem 'danger-simplecov_json'
     gem 'rspec_junit_formatter'
   end
