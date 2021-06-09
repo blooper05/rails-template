@@ -1,0 +1,17 @@
+# frozen_string_literal: true
+
+source 'https://rubygems.org'
+
+ruby File.read('.ruby-version').strip
+
+# === Application ===
+<% rails_gemfile_entry.each do |gem| -%>
+gem '<%= gem.name %>'<%= %(, '#{gem.version}') if gem.version %>
+<% end -%>
+gem 'bootsnap', require: false
+
+# === Web Server ===
+gem 'puma'
+
+# === Database ===
+gem 'pg'
