@@ -1,9 +1,9 @@
 
-# Created by https://www.gitignore.io/api/ruby,rails,sublimetext,vim,visualstudiocode,jetbrains+all,linux,osx,windows
-# Edit at https://www.gitignore.io/?templates=ruby,rails,sublimetext,vim,visualstudiocode,jetbrains+all,linux,osx,windows
+# Created by https://www.toptal.com/developers/gitignore/api/ruby,rails,sublimetext,vim,visualstudiocode,jetbrains+all,linux,osx,windows
+# Edit at https://www.toptal.com/developers/gitignore?templates=ruby,rails,sublimetext,vim,visualstudiocode,jetbrains+all,linux,osx,windows
 
 ### JetBrains+all ###
-# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio and WebStorm
+# Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 # User-specific stuff
@@ -33,9 +33,14 @@
 # When using Gradle or Maven with auto-import, you should exclude module files,
 # since they will be recreated, and may cause churn.  Uncomment if using
 # auto-import.
+# .idea/artifacts
+# .idea/compiler.xml
+# .idea/jarRepositories.xml
 # .idea/modules.xml
 # .idea/*.iml
 # .idea/modules
+# *.iml
+# *.ipr
 
 # CMake
 cmake-build-*/
@@ -83,6 +88,9 @@ modules.xml
 .idea/misc.xml
 *.ipr
 
+# Sonarlint plugin
+.idea/sonarlint
+
 ### Linux ###
 *~
 
@@ -105,7 +113,7 @@ modules.xml
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
 
 # Thumbnails
 ._*
@@ -130,16 +138,21 @@ Temporary Items
 *.rbc
 capybara-*.html
 .rspec
-/log
-/tmp
 /db/*.sqlite3
 /db/*.sqlite3-journal
+/db/*.sqlite3-[0-9]*
 /public/system
 /coverage/
 /spec/tmp
 *.orig
 rerun.txt
 pickle-email-*.html
+
+# Ignore all logfiles and tempfiles.
+/log/*
+/tmp/*
+!/log/.keep
+!/tmp/.keep
 
 # TODO Comment out this rule if you are OK with secrets being uploaded to the repo
 config/initializers/secret_token.rb
@@ -148,9 +161,10 @@ config/master.key
 # Only include if you have production secrets in this file, which is no longer a Rails default
 # config/secrets.yml
 
-# dotenv
-# TODO Comment out this rule if environment variables can be committed
+# dotenv, dotenv-rails
+# TODO Comment out these rules if environment variables can be committed
 .env
+.env.*
 
 ## Environment normalization:
 /.bundle
@@ -204,6 +218,8 @@ yarn-debug.log*
 # Used by dotenv library to load environment variables.
 # .env
 
+# Ignore Byebug command history file.
+
 ## Specific to RubyMotion:
 .dat*
 .repl_history
@@ -217,7 +233,6 @@ build-iPhoneSimulator/
 # We recommend against adding the Pods directory to your .gitignore. However
 # you should judge for yourself, the pros and cons are mentioned at:
 # https://guides.cocoapods.org/using/using-cocoapods.html#should-i-check-the-pods-directory-into-source-control
-#
 # vendor/Pods/
 
 ## Documentation cache and generated files:
@@ -226,7 +241,6 @@ build-iPhoneSimulator/
 /doc/
 /rdoc/
 
-## Environment normalization:
 /.bundle/
 /lib/bundler/man/
 
@@ -237,6 +251,9 @@ build-iPhoneSimulator/
 # .ruby-gemset
 
 # unless supporting rvm < 1.11.0 or doing something fancy, ignore this:
+
+# Used by RuboCop. Remote config files pulled in from inherit_from directive.
+# .rubocop-https?--*
 
 ### SublimeText ###
 # Cache files for Sublime Text
@@ -273,6 +290,7 @@ GitHub.sublime-settings
 ### Vim ###
 # Swap
 [._]*.s[a-v][a-z]
+!*.svg  # comment out if you don't need vector files
 [._]*.sw[a-p]
 [._]s[a-rt-v][a-z]
 [._]ss[a-gi-z]
@@ -280,6 +298,7 @@ GitHub.sublime-settings
 
 # Session
 Session.vim
+Sessionx.vim
 
 # Temporary
 .netrwhist
@@ -294,14 +313,17 @@ tags
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+*.code-workspace
 
 ### VisualStudioCode Patch ###
 # Ignore all local history of files
 .history
+.ionide
 
 ### Windows ###
 # Windows thumbnail cache files
 Thumbs.db
+Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
 
@@ -324,4 +346,4 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.gitignore.io/api/ruby,rails,sublimetext,vim,visualstudiocode,jetbrains+all,linux,osx,windows
+# End of https://www.toptal.com/developers/gitignore/api/ruby,rails,sublimetext,vim,visualstudiocode,jetbrains+all,linux,osx,windows
