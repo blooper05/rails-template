@@ -10,4 +10,5 @@ group :development do
   gem 'annotate_gem'        # Add comments to your Gemfile with each dependency's description.
   gem 'rubocop'             # Automatic Ruby code style checking tool.
   gem 'rubocop-performance' # Automatic performance checking tool for Ruby code.
+  gem 'rubocop-rails'       # Automatic Rails code style checking tool.
 end
