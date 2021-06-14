@@ -19,6 +19,7 @@ gem 'strong_migrations'
 
 # === Model ===
 gem 'acts-as-taggable-on'
+gem 'acts_as_follower'
 gem 'ancestry'
 gem 'counter_culture'
 gem 'enumerize'
