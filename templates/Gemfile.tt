@@ -29,3 +29,6 @@ gem 'counter_culture'
 gem 'enumerize'
 gem 'ranked-model' # or gem 'acts_as_list'
 gem 'stateful_enum'
+
+# === Validation ===
+gem 'email_validator'
