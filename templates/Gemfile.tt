@@ -17,6 +17,9 @@ gem 'puma'
 gem 'pg'
 gem 'strong_migrations'
 
+# === Seed ===
+gem 'activerecord-import'
+
 # === Model ===
 gem 'acts-as-taggable-on'
 gem 'acts_as_follower'
