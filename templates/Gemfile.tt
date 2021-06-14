@@ -16,3 +16,6 @@ gem 'puma'
 # === Database ===
 gem 'pg'
 gem 'strong_migrations'
+
+# === Model ===
+gem 'ancestry'
