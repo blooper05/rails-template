@@ -36,3 +36,4 @@ gem 'validate_url'
 
 # === Controller ===
 gem 'action_args'
+gem 'pagy'
