@@ -19,3 +19,4 @@ gem 'strong_migrations'
 
 # === Model ===
 gem 'ancestry'
+gem 'counter_culture'
