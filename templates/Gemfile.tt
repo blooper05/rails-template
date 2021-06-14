@@ -19,6 +19,7 @@ gem 'strong_migrations'
 
 # === Seed ===
 gem 'activerecord-import'
+gem 'seed-fu'
 
 # === Model ===
 gem 'acts-as-taggable-on'
