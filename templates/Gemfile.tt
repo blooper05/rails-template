@@ -57,6 +57,7 @@ gem 'shoryuken'
 
 # === Authentication ===
 gem 'bcrypt'
+gem 'knock'
 
 # === External System ===
 gem 'her'
