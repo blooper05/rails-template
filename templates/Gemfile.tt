@@ -45,3 +45,6 @@ gem 'oj'
 gem 'oj_mimic_json'
 gem 'rack-cors'
 gem 'versionist'
+
+# === Monitoring ===
+gem 'okcomputer'
