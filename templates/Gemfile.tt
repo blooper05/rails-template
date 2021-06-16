@@ -51,6 +51,9 @@ gem 'oj_mimic_json'
 gem 'rack-cors'
 gem 'versionist'
 
+# === Background Job ===
+gem 'shoryuken'
+
 # === Monitoring ===
 gem 'newrelic_rpm'
 gem 'okcomputer'
