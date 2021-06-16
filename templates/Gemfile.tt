@@ -55,6 +55,9 @@ gem 'versionist'
 gem 'aws-sdk-sqs'
 gem 'shoryuken'
 
+# === Authentication ===
+gem 'bcrypt'
+
 # === External System ===
 gem 'her'
 
