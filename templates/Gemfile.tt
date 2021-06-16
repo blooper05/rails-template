@@ -48,3 +48,4 @@ gem 'versionist'
 
 # === Monitoring ===
 gem 'okcomputer'
+gem 'rails_semantic_logger'
