@@ -10,6 +10,12 @@ gem '<%= gem.name %>'<%= %(, '#{gem.version}') if gem.version %>
 <% end -%>
 gem 'bootsnap', require: false
 
+# === Architecture ===
+gem 'active_type' # or
+# gem 'trailblazer'
+# gem 'trailblazer-rails'
+# gem 'trailblazer-cells'
+
 # === Web Server ===
 gem 'puma'
 
@@ -22,7 +28,6 @@ gem 'activerecord-import'
 gem 'seed-fu'
 
 # === Model ===
-gem 'active_type'
 gem 'acts-as-taggable-on'
 gem 'acts_as_follower'
 gem 'ancestry'
