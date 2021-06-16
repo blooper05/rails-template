@@ -55,6 +55,9 @@ gem 'versionist'
 gem 'aws-sdk-sqs'
 gem 'shoryuken'
 
+# === External System ===
+gem 'her'
+
 # === Monitoring ===
 gem 'newrelic_rpm'
 gem 'okcomputer'
