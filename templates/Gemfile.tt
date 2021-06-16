@@ -58,6 +58,7 @@ gem 'shoryuken'
 # === Authentication ===
 gem 'bcrypt'
 gem 'doorkeeper'
+gem 'doorkeeper-jwt'
 gem 'jwt'
 gem 'knock'
 
