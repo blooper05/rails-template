@@ -52,6 +52,7 @@ gem 'rack-cors'
 gem 'versionist'
 
 # === Background Job ===
+gem 'aws-sdk-sqs'
 gem 'shoryuken'
 
 # === Monitoring ===
