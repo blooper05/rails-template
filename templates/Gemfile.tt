@@ -41,3 +41,4 @@ gem 'pagy'
 
 # === API ===
 gem 'jsonapi-serializer'
+gem 'oj'
