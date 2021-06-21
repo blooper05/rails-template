@@ -90,4 +90,5 @@ group :development do
   # === Command ===
   gem 'listen'
   gem 'spring'
+  gem 'spring-watcher-listen'
 end
