@@ -70,3 +70,8 @@ gem 'newrelic_rpm'
 gem 'okcomputer'
 gem 'rails_semantic_logger'
 gem 'sentry-rails'
+
+group :development do
+  # === Linter ===
+  gem 'rubocop'
+end
