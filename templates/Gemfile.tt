@@ -80,4 +80,5 @@ group :development do
   gem 'rubocop-inflector'
   gem 'rubocop-faker'
   gem 'rubocop-rake'
+  gem 'rails_best_practices'
 end
