@@ -71,6 +71,11 @@ gem 'okcomputer'
 gem 'rails_semantic_logger'
 gem 'sentry-rails'
 
+group :test do
+  # === Testing ===
+  gem 'rspec-rails'
+end
+
 group :development do
   # === Linter ===
   gem 'rubocop'
