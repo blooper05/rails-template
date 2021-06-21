@@ -86,4 +86,7 @@ group :development do
   # === Documentation ===
   gem 'annotate'
   gem 'rails-erd'
+
+  # === Command ===
+  gem 'listen'
 end
