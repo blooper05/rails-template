@@ -79,4 +79,5 @@ group :development do
   gem 'rubocop-rspec'
   gem 'rubocop-inflector'
   gem 'rubocop-faker'
+  gem 'rubocop-rake'
 end
