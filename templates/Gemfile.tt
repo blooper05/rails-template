@@ -75,7 +75,7 @@ group :test do
   # === Testing ===
   gem 'rspec-rails'
   gem 'rspec-request_describer'
-  gem 'committee-rails'
+  gem 'committee-rails' # or gem 'rspec-openapi'
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'timecop'
