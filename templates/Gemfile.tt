@@ -89,4 +89,5 @@ group :development do
 
   # === Command ===
   gem 'listen'
+  gem 'spring'
 end
