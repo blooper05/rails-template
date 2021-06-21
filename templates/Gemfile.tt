@@ -80,6 +80,7 @@ group :test do
   gem 'faker'
   gem 'timecop'
   gem 'database_rewinder'
+  gem 'fuubar'
 end
 
 group :development do
