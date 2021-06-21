@@ -75,6 +75,7 @@ group :test do
   # === Testing ===
   gem 'rspec-rails'
   gem 'rspec-request_describer'
+  gem 'committee-rails'
 end
 
 group :development do
