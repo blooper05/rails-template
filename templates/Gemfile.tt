@@ -82,4 +82,7 @@ group :development do
   gem 'rubocop-rake'
   gem 'rails_best_practices'
   gem 'reek'
+
+  # === Documentation ===
+  gem 'annotate'
 end
