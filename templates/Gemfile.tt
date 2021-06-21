@@ -74,4 +74,5 @@ gem 'sentry-rails'
 group :development do
   # === Linter ===
   gem 'rubocop'
+  gem 'rubocop-performance'
 end
