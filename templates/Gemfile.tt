@@ -78,6 +78,7 @@ group :test do
   gem 'committee-rails'
   gem 'factory_bot_rails'
   gem 'faker'
+  gem 'timecop'
 end
 
 group :development do
