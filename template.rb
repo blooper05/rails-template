@@ -58,6 +58,13 @@ insert_into_file 'spec/rails_helper.rb', <<~CODE, before: /^end\Z/
   config.include FactoryBot::Syntax::Methods
 CODE
 
+# === timecop ===
+insert_into_file 'spec/rails_helper.rb', <<~CODE, before: /^end\Z/
+
+  # === timecop ===
+  config.after { Timecop.return }
+CODE
+
 # === rubocop ===
 copy_file '.rubocop.yml'
 
