@@ -35,6 +35,14 @@ copy_file 'config/locales/models/.keep'
 route 'draw :api'
 copy_file 'config/routes/api.rb'
 
+# === rspec-rails ===
+generate 'rspec:install'
+copy_file 'spec/factories/.keep'
+copy_file 'spec/jobs/.keep'
+copy_file 'spec/models/.keep'
+copy_file 'spec/requests/.keep'
+copy_file 'spec/support/.keep'
+
 # === rubocop ===
 copy_file '.rubocop.yml'
 
