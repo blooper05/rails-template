@@ -37,3 +37,6 @@ copy_file 'config/routes/api.rb'
 
 # === spring ===
 run 'spring binstub --all'
+
+# === rubocop ===
+run 'rubocop --auto-correct-all --format simple'
