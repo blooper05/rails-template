@@ -4,7 +4,7 @@ require:
   - rubocop-rails
   - rubocop-rspec
   - rubocop-i18n
-  - rubocop-inflector
+  # - rubocop-inflector
   - rubocop-faker
   - rubocop-rake
 
