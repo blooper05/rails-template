@@ -35,6 +35,9 @@ copy_file 'config/locales/models/.keep'
 route 'draw :api'
 copy_file 'config/routes/api.rb'
 
+# === annotate ===
+generate 'annotate:install'
+
 # === spring ===
 run 'spring binstub --all'
 
