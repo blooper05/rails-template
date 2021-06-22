@@ -38,6 +38,10 @@ copy_file 'config/routes/api.rb'
 # === annotate ===
 generate 'annotate:install'
 
+# === rails-erd ===
+generate 'erd:install'
+copy_file '.erdconfig'
+
 # === spring ===
 run 'spring binstub --all'
 
