@@ -8,6 +8,12 @@ template 'Gemfile', force: true
 
 application do
   <<~CODE
+    # === Generators ===
+    config.generators do |generator|
+      generator.test_framework      :rspec
+      generator.fixture_replacement :factory_bot, dir: 'spec/factories'
+    end
+
     # === TimeZone ===
     config.time_zone                      = 'Asia/Tokyo'
     config.active_record.default_timezone = :local
