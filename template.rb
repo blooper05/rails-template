@@ -34,3 +34,6 @@ copy_file 'config/locales/models/.keep'
 # === Routing ===
 route 'draw :api'
 copy_file 'config/routes/api.rb'
+
+# === spring ===
+run 'spring binstub --all'
