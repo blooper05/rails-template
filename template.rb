@@ -35,6 +35,9 @@ copy_file 'config/locales/models/.keep'
 route 'draw :api'
 copy_file 'config/routes/api.rb'
 
+# === rubocop ===
+copy_file '.rubocop.yml'
+
 # === annotate ===
 generate 'annotate:install'
 
