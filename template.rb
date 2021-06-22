@@ -65,6 +65,14 @@ insert_into_file 'spec/rails_helper.rb', <<~CODE, before: /^end\Z/
   config.after { Timecop.return }
 CODE
 
+# === database_rewinder ===
+insert_into_file 'spec/rails_helper.rb', <<~CODE, before: /^end\Z/
+
+  # === database_rewinder ===
+  config.before(:suite) { DatabaseRewinder.clean_all }
+  config.after { DatabaseRewinder.clean }
+CODE
+
 # === rubocop ===
 copy_file '.rubocop.yml'
 
