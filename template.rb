@@ -43,6 +43,13 @@ copy_file 'spec/models/.keep'
 copy_file 'spec/requests/.keep'
 copy_file 'spec/support/.keep'
 
+# === rspec-request_describer ===
+insert_into_file 'spec/rails_helper.rb', <<~CODE, before: /^end\Z/
+
+  # === rspec-request_describer ===
+  config.include RSpec::RequestDescriber, type: :request
+CODE
+
 # === rubocop ===
 copy_file '.rubocop.yml'
 
