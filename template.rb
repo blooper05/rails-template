@@ -6,6 +6,8 @@ end
 
 template 'Gemfile', force: true
 
+copy_file '.gitignore', force: true
+
 application do
   <<~CODE
     # === Generators ===
