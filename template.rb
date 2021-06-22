@@ -50,6 +50,14 @@ insert_into_file 'spec/rails_helper.rb', <<~CODE, before: /^end\Z/
   config.include RSpec::RequestDescriber, type: :request
 CODE
 
+# === factory_bot_rails ===
+insert_into_file 'spec/rails_helper.rb', <<~CODE, before: /^end\Z/
+
+  # === factory_bot_rails ===
+  config.before(:suite) { FactoryBot.reload }
+  config.include FactoryBot::Syntax::Methods
+CODE
+
 # === rubocop ===
 copy_file '.rubocop.yml'
 
