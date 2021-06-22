@@ -30,3 +30,7 @@ remove_file 'config/locales/en.yml'
 copy_file 'config/locales/defaults/en.yml'
 copy_file 'config/locales/defaults/ja.yml'
 copy_file 'config/locales/models/.keep'
+
+# === Routing ===
+route 'draw :api'
+copy_file 'config/routes/api.rb'
