@@ -73,6 +73,10 @@ insert_into_file 'spec/rails_helper.rb', <<~CODE, before: /^end\Z/
   config.after { DatabaseRewinder.clean }
 CODE
 
+# === fuubar ===
+append_file '.gitignore', "\n!.rspec\n"
+append_file '.rspec', '--format Fuubar'
+
 # === rubocop ===
 copy_file '.rubocop.yml'
 
