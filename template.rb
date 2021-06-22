@@ -43,30 +43,17 @@ copy_file 'spec/models/.keep'
 copy_file 'spec/requests/.keep'
 copy_file 'spec/support/.keep'
 
-# === rspec-request_describer ===
 insert_into_file 'spec/rails_helper.rb', <<~CODE, before: /^end\Z/
 
   # === rspec-request_describer ===
   config.include RSpec::RequestDescriber, type: :request
-CODE
-
-# === factory_bot_rails ===
-insert_into_file 'spec/rails_helper.rb', <<~CODE, before: /^end\Z/
 
   # === factory_bot_rails ===
   config.before(:suite) { FactoryBot.reload }
   config.include FactoryBot::Syntax::Methods
-CODE
-
-# === timecop ===
-insert_into_file 'spec/rails_helper.rb', <<~CODE, before: /^end\Z/
 
   # === timecop ===
   config.after { Timecop.return }
-CODE
-
-# === database_rewinder ===
-insert_into_file 'spec/rails_helper.rb', <<~CODE, before: /^end\Z/
 
   # === database_rewinder ===
   config.before(:suite) { DatabaseRewinder.clean_all }
