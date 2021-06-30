@@ -81,6 +81,9 @@ group :test do
   gem 'timecop'
   gem 'database_rewinder'
   gem 'fuubar'
+
+  # === Analysis ===
+  gem 'simplecov'
 end
 
 group :development do
