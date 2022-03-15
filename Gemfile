@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-ruby File.read('.ruby-version').delete_prefix('ruby-').strip
+ruby File.read('.ruby-version').strip
 
 gem 'rails' # Full-stack web application framework.
 
