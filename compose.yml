@@ -1,4 +1,18 @@
 ---
+x-app: &app
+  build:
+    context: .
+    dockerfile: ./Dockerfile
+  volumes:
+    - .:/usr/src/app
+    - bundle-data:/usr/local/bundle
+  stdin_open: true
+  tty: true
+  environment:
+    EDITOR: vi
+  depends_on:
+    - db
+
 services:
   db:
     image: postgres:14.5-alpine3.16
@@ -8,22 +22,11 @@ services:
       - db-data:/var/lib/postgresql/data
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
-  web: &app
-    build:
-      context: .
-      dockerfile: ./Dockerfile
+  web:
+    <<: *app
     command: bin/rails server --binding=0.0.0.0
     ports:
       - 3000:3000
-    volumes:
-      - .:/usr/src/app
-      - bundle-data:/usr/local/bundle
-    stdin_open: true
-    tty: true
-    environment:
-      EDITOR: vi
-    depends_on:
-      - db
   dev:
     <<: *app
     command: bin/spring server
