@@ -18,4 +18,4 @@ RUN apk add --update --no-cache \
   ttf-freefont=20120503-r2 \
   # development tools
   less=590-r0 \
-  && gem install bundler --version=2.3.21 --no-document
+  && gem install bundler --version=2.3.21
