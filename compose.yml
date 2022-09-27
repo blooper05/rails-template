@@ -3,6 +3,9 @@ x-app: &app
   build:
     context: .
     dockerfile: ./Dockerfile
+  tmpfs:
+    - /tmp
+    - /usr/src/app/tmp/pids
   volumes:
     - .:/usr/src/app
     - bundle-data:/usr/local/bundle
