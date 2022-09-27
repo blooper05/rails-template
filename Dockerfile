@@ -2,7 +2,6 @@ FROM ruby:3.1.2-alpine3.16
 
 ENV BUNDLE_AUTO_INSTALL=true \
   BUNDLE_JOBS=4 \
-  BUNDLE_PATH=/bundle \
   BUNDLE_RETRY=3
 
 WORKDIR /usr/src/app
