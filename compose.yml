@@ -32,6 +32,4 @@ services:
 
 volumes:
   db-data:
-    driver: local
   bundle-data:
-    driver: local
