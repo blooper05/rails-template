@@ -17,4 +17,4 @@ RUN apk add --update --no-cache \
       graphviz ttf-freefont \
       # development tools
       less \
-  && gem install bundler --no-document
+  && gem install bundler --version=2.3.21 --no-document
