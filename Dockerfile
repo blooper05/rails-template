@@ -20,4 +20,4 @@ RUN apk add --update --no-cache \
   less=590-r0 \
   # update RubyGems and install the specific Bundler version
   && gem update --system \
-  && gem install bundler --version=2.3.21
+  && gem install bundler --version=2.3.22
