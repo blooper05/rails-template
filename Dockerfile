@@ -1,4 +1,4 @@
-FROM ruby:3.1.2-alpine3.15
+FROM ruby:3.1.2-alpine3.16
 
 ENV BUNDLE_AUTO_INSTALL=true \
     BUNDLE_JOBS=4 \
