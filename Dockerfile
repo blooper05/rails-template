@@ -8,13 +8,14 @@ WORKDIR /usr/src/app
 
 RUN apk add --update --no-cache \
       # for native extensions
-      build-base \
+      build-base=0.5-r3 \
       # for pg
-      postgresql-dev \
+      postgresql14-dev=14.5-r0 \
       # for activesupport
-      tzdata \
+      tzdata=2022c-r0 \
       # for rails-erd
-      graphviz ttf-freefont \
+      graphviz=3.0.0-r0 \
+      ttf-freefont=20120503-r2 \
       # development tools
       less \
   && gem install bundler --version=2.3.21 --no-document
