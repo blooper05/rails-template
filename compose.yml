@@ -13,6 +13,7 @@ x-app: &app
   tty: true
   environment:
     EDITOR: vi
+    RUBOCOP_OPTS: --server
     RUBYOPT: -W:deprecated
   depends_on:
     - db
